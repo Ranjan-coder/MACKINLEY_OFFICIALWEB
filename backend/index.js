@@ -23,7 +23,10 @@ const JobDataRoutes  = require('./Routes/JobDataRoutes');
 app.use('/api',JobDataRoutes);
 //! Job Data Routes //!
 
-
+//! Job Application Routes //!
+const JobApplicationRoute =  require('./Routes/JobApplication')
+app.use('/api',JobApplicationRoute);
+//! Job Application Routes //!
 
 
 require("./Config/Config")

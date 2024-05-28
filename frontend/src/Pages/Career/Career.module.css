@@ -9,6 +9,12 @@
     border-radius: 7px;
 }
 
+.modalImage {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
 @media screen and (min-width:330px) and (max-width:950px){
     .career_container{
         padding-top: 20px;

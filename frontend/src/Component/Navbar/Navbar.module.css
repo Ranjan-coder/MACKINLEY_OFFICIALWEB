@@ -1,6 +1,4 @@
-a{
-    text-decoration: none;
-}
+
 .topnavbarlink{
     display: flex;
     justify-content: space-evenly;
@@ -8,6 +6,7 @@ a{
 }
 .navrouterlink{
     color: #282454;
+    text-decoration: none;
 }
 .navrouterlink:hover{
     color: blue;

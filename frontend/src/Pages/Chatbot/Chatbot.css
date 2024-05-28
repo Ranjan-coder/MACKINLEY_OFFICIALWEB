@@ -26,7 +26,7 @@
 }
 
 .react-chatbot-kit-chat-inner-container {
-    height: 410px;
+    height: 410px !important;
     background-color: #fff;
     border-radius: 3px;
     border-radius: 5px;

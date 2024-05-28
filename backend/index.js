@@ -13,7 +13,20 @@ app.use(
   })
 );
 
+//! ChatBot Routes //!
+const chatRoutes = require('./Routes/ChatBotRoutes')
+app.use('/api', chatRoutes)
+//! ChatBot Routes //!
 
+//! Job Data Routes //!
+const JobDataRoutes  = require('./Routes/JobDataRoutes');
+app.use('/api',JobDataRoutes);
+//! Job Data Routes //!
+
+
+
+
+require("./Config/Config")
 app.listen(Port, async () => {
   try {
     console.log(`SERVER STARED  : http://localhost:${Port}`);

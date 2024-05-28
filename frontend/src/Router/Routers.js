@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import Home from '../Pages/Home/Home';
@@ -28,7 +29,7 @@ const Routers = () => {
         <Route path='/contact' element={<Contact />} />
       </Routes>
     </>
-  )
-}
+  );
+};
 
-export default Routers
+export default Routers;

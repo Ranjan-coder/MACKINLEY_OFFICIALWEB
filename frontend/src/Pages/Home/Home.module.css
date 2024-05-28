@@ -1,0 +1,131 @@
+@import "../../Font.css";
+
+.swiper_pannel,
+.swiper_pannel_two,
+.swiper_pannel_three {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 800px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.swiper_pannel::before,
+.swiper_pannel_two::before,
+.swiper_pannel_three::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.swiper_pannel .container,
+.swiper_pannel_two .container,
+.swiper_pannel_three .container {
+  position: relative;
+  z-index: 2;
+}
+
+.swiper_pannel {
+  background-image: url("../../Assets/office_one.jpeg");
+}
+
+.swiper_pannel_two {
+  background-image: url("../../Assets/office_two.jpeg");
+}
+
+.swiper_pannel_three {
+  background-image: url("../../Assets/office_three.jpeg");
+}
+
+.swiper_pannel_box {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.swiper_pannel_title {
+  color: #fff;
+  font-size: 40px;
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+.swiper_pannel_cnt {
+  color: #fff;
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.swiper_pannel_button {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 15px;
+  font-family: "Merriweather", serif;
+  border: none;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.swiper_pannel_button:hover {
+  background-color: #002366;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .swiper_pannel_cnt {
+    font-size: 17px;
+  }
+  .swiper_pannel_title {
+    font-size: 35px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .swiper_pannel_cnt {
+    font-size: 16px;
+  }
+  .swiper_pannel_title {
+    font-size: 30px;
+  }
+  .swiper_pannel,
+  .swiper_pannel_two,
+  .swiper_pannel_three {
+    height: 650px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 575px) {
+  .swiper_pannel_cnt {
+    font-size: 13px;
+  }
+  .swiper_pannel_title {
+    font-size: 25px;
+  }
+  .swiper_pannel,
+  .swiper_pannel_two,
+  .swiper_pannel_three {
+    height: 600px;
+  }
+  .swiper_pannel_button {
+    padding: 10px;
+    font-size: 13px;
+  }
+}

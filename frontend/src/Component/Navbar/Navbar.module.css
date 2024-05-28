@@ -1,20 +1,20 @@
-a{
-    text-decoration: none;
+a {
+  text-decoration: none !important;
 }
-.topnavbarlink{
-    display: flex;
-    justify-content: space-evenly;
-    width: 50vw;
+.topnavbarlink {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50vw;
 }
-.navrouterlink{
-    color: #282454;
+.navrouterlink {
+  color: #282454;
 }
-.navrouterlink:hover{
-    color: blue;
-    transition: all 0.5s;
+.navrouterlink:hover {
+  color: blue;
+  transition: all 0.5s;
 }
-.widthlink{
-    height: 2px;
-    width: 30px;
-    background-color: #f8a8a8;
+.widthlink {
+  height: 2px;
+  width: 30px;
+  background-color: #f8a8a8;
 }

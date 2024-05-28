@@ -6,7 +6,6 @@ import Discover from '../Pages/Discover/Discover';
 import Service from '../Pages/Service/Service';
 import Career from '../Pages/Career/Career';
 import Contact from '../Pages/Contact/Contact';
-import ChatbotComponent from '../Pages/Chatbot/ChatbotComponent';
 
 const Routers = () => {
   return (
@@ -20,9 +19,8 @@ const Routers = () => {
         <Route path='/career' element={<Career/>}/>
         <Route path='/contact' element={<Contact/>}/>
     </Routes>
-
     </>
-  )
-}
+  );
+};
 
-export default Routers
+export default Routers;

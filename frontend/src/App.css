@@ -1,9 +1,15 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poetsen+One&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  /* font-family: "Poetsen One", sans-serif; */
+  /* font-family: "Merriweather", serif; */
 }
-.navbarlayout{
+
+.navbarlayout {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,11 +20,13 @@
   top: 0;
   box-shadow: 1px 0px 5px rgb(68, 45, 198);
 }
-.officiallogo{
+
+.officiallogo {
   height: 50px;
   margin-left: 50px;
   cursor: pointer;
 }
-.navbarroutes{
+
+.navbarroutes {
   margin-right: 50px;
 }

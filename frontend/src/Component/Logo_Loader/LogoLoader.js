@@ -4,7 +4,7 @@ import logoStyle from "./LogoLoader.module.css"
 function LogoLoader() {
     return (
         <section className={logoStyle.loaderMainContainer}>
-            <img src={Logo} alt="https://mackinlay.in/" className={`${logoStyle.logo} animate__infinite	 animate__animated animate__heartBeat`} />
+            <img src={Logo} alt="https://mackinlay.in/" className={`${logoStyle.logo} animate__slow animate__infinite	 animate__animated animate__heartBeat`} />
         </section>
     )
 }

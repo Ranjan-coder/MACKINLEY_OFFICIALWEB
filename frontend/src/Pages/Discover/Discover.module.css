@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poetsen+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: "Poetsen One", sans-serif; */
+    font-family: "Merriweather", serif;
+
+    /* font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal; */
+}
+
+.__discoverPage {
+    /* border: 1px solid red; */
+    margin: 3em;
+    height: 100vh;
+}
+
+.__header {
+    padding: 1em 0;
+}
+
+.__headerText {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 100;
+}
+.__headerDesc{
+    margin: .5em 0;
+}
+
+.__headerDesc,
+.__cardDescription {
+    color: rgb(100, 100, 100);
+}
+
+.__container {
+    /* border: 1px solid; */
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.__card {
+    border: 1px solid rgb(185, 185, 185);
+    width: 310px;
+    height: 350px;
+    cursor: pointer;
+    position: relative;
+    transition: 500ms ease;
+}
+
+.__card:hover {
+    /* background: rgb(240, 246, 251); */
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.__cardImg {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+.__card h4{
+    margin-top: .5em;
+}
+
+.__cardDescription {
+    /* border: 1px solid red; */
+    margin-top: .5em;
+    line-height: 1.5;
+}
+
+.__card h4,
+.__card p {
+    padding-left: 1em;
+}
+
+.__arrowIcon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: #4834DF;
+    transition: 500ms ease;
+}
+
+.__card:hover .__arrowIcon {
+    left: 25px;
+}

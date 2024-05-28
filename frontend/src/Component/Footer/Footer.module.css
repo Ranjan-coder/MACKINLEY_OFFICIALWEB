@@ -1,4 +1,89 @@
 .footerparent{
-    height: 50vh;
-    background-color: #282454;
+    height: 55vh;
+    background-color: #140f4d;
+}
+.ftrmaincntn{
+    /* margin-top: 10px; */
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+.footerheadingparent{
+    height: 9vh;
+}
+.parentimgtext{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.topnavbarlink{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.widthlink{
+    height: 2px;
+    width: 45px;
+    background-color: #58f55d;
+}
+.navrouterlink{
+    color: aliceblue;
+}
+.navrouterlink:hover{
+    color: red;
+}
+.locationicon{
+    height: 20px;
+}
+.footercontentheader{
+    color: aliceblue;
+}
+.textcolor{
+    color: aliceblue;
+}
+.ftrimgtext{
+    display: flex;
+    width: 300px;
+    gap: 10px;
+    align-items: center;
+}
+.ftrnewsltrtext{
+    width: 400px;
+    color: aliceblue;
+}
+.newscntnrparent{
+    display: flex;
+    flex-direction: column;
+}
+.ftrcntnttextsocial{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.ftrcopyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1px;
+    border-bottom: 0.5px solid white;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+.ftrcopyrighttextsymbol{
+    color: aliceblue;
+}
+.ftrcopyrighttextsymbol:hover{
+    color: red;
+}
+.ftrcopyrighttextparent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.ftrcopyrighttext{
+    color: aliceblue;
 }

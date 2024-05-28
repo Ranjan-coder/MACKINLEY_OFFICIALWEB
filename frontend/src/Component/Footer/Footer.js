@@ -48,23 +48,23 @@ const Footer = () => {
   const SocialIcons = [
     {
       Icon: BsTwitterX,
-      Link: "/",
+      Link: "https://x.com/__mackinlay_",
     },
     {
       Icon: TbBrandFacebook,
-      Link: "/",
+      Link: "https://www.facebook.com/profile.php?id=61556885114831",
     },
     {
       Icon: AiOutlineLinkedin,
-      Link: "/",
+      Link: "https://www.linkedin.com/company/mackinlay/",
     },
     {
       Icon: BsInstagram,
-      Link: "/",
+      Link: "https://www.instagram.com/mackinlay_enterprise?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     },
     {
       Icon: FaWhatsapp,
-      Link: "/",
+      Link: "https://web.whatsapp.com/send?phone=919655261097",
     },
   ];
 

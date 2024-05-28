@@ -9,14 +9,14 @@ function App() {
   const NavigateTo = useNavigate()
   return (
     <>
-      {/* <div className='navbarlayout'>
+      <div className='navbarlayout'>
         <div>
           <img className='officiallogo' onClick={() => NavigateTo('/')} src={officiallogo} alt='officiallogo' />
         </div>
         <div className='navbarroutes'>
           <Navbar />
         </div>
-      </div> */}
+      </div>
       <Routers />
       <Footer />
     </>

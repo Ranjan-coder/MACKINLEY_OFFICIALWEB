@@ -45,33 +45,33 @@ const About = () => {
       <div className={`${aboutStyle.about__companyDataBox}`}>
         <h2 className={`${aboutStyle.about__SecondaryHeading}`}>Our Company Growth</h2>
 
-        <div className={`${aboutStyle.about__CardData__container}`}>
+        <div className={`${aboutStyle.about__CardData__container} animate__animated animate__fadeInRight`}>
 
-          <div className={`${aboutStyle.about__dataCard} animate__animated animate__slideInRight`}>
+          <div className={`${aboutStyle.about__dataCard}`}>
             <span className={`${aboutStyle.dataCard__title}`}>experience</span>
             <span className={`${aboutStyle.dataCard__number}`}>3 years<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
           </div>
 
 
-          <div className={`${aboutStyle.about__dataCard} animate__animated animate__slideInDown`}>
+          <div className={`${aboutStyle.about__dataCard}`}>
             <span className={`${aboutStyle.dataCard__title}`}>employees</span>
             <span className={`${aboutStyle.dataCard__number}`}>100<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
           </div>
 
 
-          <div className={`${aboutStyle.about__dataCard} animate__animated animate__slideInLeft`}>
+          <div className={`${aboutStyle.about__dataCard}`}>
             <span className={`${aboutStyle.dataCard__title}`}>our Clients</span>
             <span className={`${aboutStyle.dataCard__number}`}>10<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
           </div>
 
 
-          <div className={`${aboutStyle.about__dataCard} animate__animated animate__slideInUp`}>
+          <div className={`${aboutStyle.about__dataCard}`}>
             <span className={`${aboutStyle.dataCard__title}`}>Completed Projects</span>
             <span className={`${aboutStyle.dataCard__number}`}>20<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
           </div>
 
 
-          <div className={`${aboutStyle.about__dataCard} animate__animated animate__slideInRight`}>
+          <div className={`${aboutStyle.about__dataCard}`}>
             <span className={`${aboutStyle.dataCard__title}`}>Running Projects</span>
             <span className={`${aboutStyle.dataCard__number}`}>5<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
           </div>
@@ -83,7 +83,7 @@ const About = () => {
 
         <h2 className={`${aboutStyle.about__SecondaryHeading} ${aboutStyle.about__SecondaryHeading_TWO}`}>Services we provide</h2>
 
-        <div className={`${aboutStyle.about__serviceCard_Container}`}>
+        <div className={`${aboutStyle.about__serviceCard_Container} animate__animated animate__fadeInLeft`}>
 
           <div className={`${aboutStyle.about__serviceCard}`}>
             <img src={websiteService} alt='Mobile_Service' className={`${aboutStyle.__serviceCard_Img}`} />
@@ -100,7 +100,7 @@ const About = () => {
           </div>
 
           <div className={`${aboutStyle.about__serviceCard}`}>
-          <img src={cloudServices} alt='Mobile_Service' className={`${aboutStyle.__serviceCard_Img}`}/>
+            <img src={cloudServices} alt='Mobile_Service' className={`${aboutStyle.__serviceCard_Img}`} />
             <h3 className={`${aboutStyle.__serviceCard_Title}`}>Cloud Computing Solutions</h3>
             <p className={`${aboutStyle.__serviceCard_desc}`}>Empower your business with our scalable, secure cloud solutions, ensuring seamless operations and efficient data management. Benefit from enhanced flexibility and reduced IT costs with our comprehensive cloud services.</p>
             <div className={`${aboutStyle.about__serviceCardBG}`}></div>

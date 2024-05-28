@@ -77,10 +77,12 @@
 }
 
 .about__companyDataBox {
+    overflow-x: hidden;
     background: radial-gradient(263px at 100.2% 3%, rgb(12, 85, 141) 31.1%, rgb(205, 181, 93) 36.4%, rgb(244, 102, 90) 50.9%, rgb(199, 206, 187) 60.7%, rgb(249, 140, 69) 72.5%, rgb(12, 73, 116) 72.6%);
     background-position: center;
     margin: 3em auto 20px auto;
     padding: 1em;
+    position: relative;
 }
 
 .about__SecondaryHeading {
@@ -112,7 +114,6 @@
 }
 
 .about__CardData__container {
-    position : relative;
     margin-top: 1em;
     display: grid;
     grid-template-columns: repeat(5, 175px);
@@ -162,6 +163,7 @@
     min-height: 450px;
     margin: 20px auto;
     padding: 1em;
+    overflow-x: hidden;
 }
 
 .about__serviceCard_Container {

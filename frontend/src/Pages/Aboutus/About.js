@@ -1,16 +1,12 @@
 import React from 'react'
 import aboutStyle from "./about.module.css"
-import aboutIllustration from "../../Assets/AboutPoster.gif"
-import mobileService from "../../Assets/mobile_servicee.png"
-import websiteService from "../../Assets/Website_service.png"
-import cloudServices from "../../Assets/Cloud_service.png"
-import { useNavigate } from 'react-router-dom';
+import aboutIllustration from "../../Assets/AboutPoster.gif";
 const About = () => {
-  const navigateTO = useNavigate();
+
   return (
     <section className={aboutStyle.aboutMain__Container}>
 
-      <div className={`${aboutStyle.about_heroSection} 	 animate__animated animate__fadeIn`}>
+      <div className={`${aboutStyle.about_heroSection} 	 animate__animated animate__fadeInRightBig`}>
 
         <div className={aboutStyle.heroSection__InfoBox}>
           <h1 className={aboutStyle.heroSection__heading}>About Mackinlay</h1>
@@ -42,77 +38,19 @@ const About = () => {
 
       </div>
 
-      <div className={`${aboutStyle.about__companyDataBox}`}>
-        <h2 className={`${aboutStyle.about__SecondaryHeading}`}>Our Company Growth</h2>
+      <div className={`${aboutStyle.about__missionSection} 	 animate__animated animate__fadeInLeftBig`}>
+        <h3 className={aboutStyle.heroSection__Secondaryheading}>Our Mission</h3>
+        <p className={aboutStyle.heroSection__description}>
+          <span className={aboutStyle.__description__para}>
+            At Mackinlay, our mission is to propel digital transformation and achieve business success through pioneering IT solutions. We are dedicated to empowering our clients by harnessing the latest technologies and methodologies, guaranteeing exceptional outcomes and maximum value.
+          </span>
 
-        <div className={`${aboutStyle.about__CardData__container} animate__animated animate__fadeInRight`}>
-
-          <div className={`${aboutStyle.about__dataCard}`}>
-            <span className={`${aboutStyle.dataCard__title}`}>experience</span>
-            <span className={`${aboutStyle.dataCard__number}`}>3 years<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
-          </div>
-
-
-          <div className={`${aboutStyle.about__dataCard}`}>
-            <span className={`${aboutStyle.dataCard__title}`}>employees</span>
-            <span className={`${aboutStyle.dataCard__number}`}>100<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
-          </div>
-
-
-          <div className={`${aboutStyle.about__dataCard}`}>
-            <span className={`${aboutStyle.dataCard__title}`}>our Clients</span>
-            <span className={`${aboutStyle.dataCard__number}`}>10<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
-          </div>
-
-
-          <div className={`${aboutStyle.about__dataCard}`}>
-            <span className={`${aboutStyle.dataCard__title}`}>Completed Projects</span>
-            <span className={`${aboutStyle.dataCard__number}`}>20<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
-          </div>
-
-
-          <div className={`${aboutStyle.about__dataCard}`}>
-            <span className={`${aboutStyle.dataCard__title}`}>Running Projects</span>
-            <span className={`${aboutStyle.dataCard__number}`}>5<sup className={`${aboutStyle.dataCard__sign}`}>+</sup></span>
-          </div>
-
-        </div>
+          <span className={aboutStyle.__description__para}>
+            We believe in a client-centric approach, ensuring that our solutions are tailored to meet the unique needs of each business. By fostering innovation and embracing emerging trends, we help our clients stay ahead in a competitive landscape. Our commitment to excellence and continuous improvement drives us to deliver superior results and sustainable growth for our clients.
+          </span>
+        </p>
       </div>
 
-      <div className={`${aboutStyle.about__servicesProvidedBox}`}>
-
-        <h2 className={`${aboutStyle.about__SecondaryHeading} ${aboutStyle.about__SecondaryHeading_TWO}`}>Services we provide</h2>
-
-        <div className={`${aboutStyle.about__serviceCard_Container} animate__animated animate__fadeInLeft`}>
-
-          <div className={`${aboutStyle.about__serviceCard}`}>
-            <img src={websiteService} alt='Mobile_Service' className={`${aboutStyle.__serviceCard_Img}`} />
-            <h3 className={`${aboutStyle.__serviceCard_Title}`}>Web Development and Design</h3>
-            <p className={`${aboutStyle.__serviceCard_desc}`}>Elevate your online presence with our expertly crafted websites, optimized for top-notch performance, user-friendly functionality, and stunning aesthetics. Drive more traffic and conversions with our SEO-optimized designs.</p>
-            <div className={`${aboutStyle.about__serviceCardBG}`}></div>
-          </div>
-
-          <div className={`${aboutStyle.about__serviceCard}`}>
-            <img src={mobileService} alt='Mobile_Service' className={`${aboutStyle.__serviceCard_Img}`} />
-            <h3 className={`${aboutStyle.__serviceCard_Title}`}>Mobile App Development</h3>
-            <p className={`${aboutStyle.__serviceCard_desc}`}>Captivate your customers with cutting-edge mobile applications designed to deliver exceptional user experiences. Leverage our expertise to create feature-rich, intuitive apps that enhance user engagement and satisfaction.</p>
-            <div className={`${aboutStyle.about__serviceCardBG}`}></div>
-          </div>
-
-          <div className={`${aboutStyle.about__serviceCard}`}>
-            <img src={cloudServices} alt='Mobile_Service' className={`${aboutStyle.__serviceCard_Img}`} />
-            <h3 className={`${aboutStyle.__serviceCard_Title}`}>Cloud Computing Solutions</h3>
-            <p className={`${aboutStyle.__serviceCard_desc}`}>Empower your business with our scalable, secure cloud solutions, ensuring seamless operations and efficient data management. Benefit from enhanced flexibility and reduced IT costs with our comprehensive cloud services.</p>
-            <div className={`${aboutStyle.about__serviceCardBG}`}></div>
-
-          </div>
-
-
-        </div>
-
-        <button className={`${aboutStyle.about__MoreServicesButton}`} onClick={() => navigateTO("/service")}>More Services</button>
-
-      </div>
     </section>
 
   )

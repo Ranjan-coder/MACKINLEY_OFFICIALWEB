@@ -14,14 +14,13 @@ const Routers = () => {
   return (
     <>
       <ProductData>
-        <Routes>
-          <Route path="/" element={<Suspense fallback={<LogoLoader />}> <Home /> </Suspense>} />
-          <Route path="/about" element={<Suspense fallback={<LogoLoader />}> <About /> </Suspense>} />
-          <Route path="/discover" element={<Suspense fallback={<LogoLoader />}> <Discover /> </Suspense>} />
-          <Route path="/discover/:id" element={<Suspense fallback={<LogoLoader />}> <ProductPage /> </Suspense>} />
-          <Route path="/career" element={<Suspense fallback={<LogoLoader />}> <Career /> </Suspense>} />
-          <Route path="/contact" element={<Suspense fallback={<LogoLoader />}> <Contact /> </Suspense>} />
-        </Routes>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/discover' element={<Discover/>}/>
+        <Route path='/career' element={<Career/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+      </Routes>
       </ProductData>
     </>
   );

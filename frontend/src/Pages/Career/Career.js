@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import CareerStyle from "./Career.module.css";
 import axios from "axios";
 import { Card, Modal, Button, Form } from "react-bootstrap";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
-
+import LogoLoader from "../../Component/Logo_Loader/LogoLoader";
 const Career = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showJobModal, setShowJobModal] = useState(false);
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [Isloading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,20 +23,22 @@ const Career = () => {
   });
 
   const [formErrors, setFormErrors] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    resume: '',
-});
+    name: "",
+    email: "",
+    phone: "",
+    resume: "",
+  });
 
   useEffect(() => {
+    setLoading(true)
     axios
       .get("http://localhost:5995/api/get-jobs")
       .then((response) => {
+        setLoading(false)
         setJobs(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
+        setLoading(false)
         console.error("There was an error fetching the job data!", error);
       });
   }, []);
@@ -66,21 +69,20 @@ const Career = () => {
       appliedJob: "",
     });
     setFormErrors({
-        name: "",
-        email: "",
-        phone: "",
-        resume: "",
-      });
+      name: "",
+      email: "",
+      phone: "",
+      resume: "",
+    });
   };
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
     setFormErrors({ ...formErrors, [name]: '' });
-};
+  };
 
-const handlePhoneChange = (value) => {
+  const handlePhoneChange = (value) => {
     setFormData({ ...formData, phone: value });
   };
 
@@ -105,85 +107,7 @@ const handlePhoneChange = (value) => {
   };
 
 
-
-//   const handleFormSubmit = async (e) => {
-//     e.preventDefault();
-//     setIsSubmitting(true);
-//     if (!validateForm()) {
-//         // If form validation fails, do not submit
-//         return;
-//     }
-
-//     // Disable the submit button
-//     setIsSubmitting(true);
-//     const formDataToSend = new FormData();
-//     formDataToSend.append("name", formData.name);
-//     formDataToSend.append("email", formData.email);
-//     formDataToSend.append("phone", formData.phone);
-//     formDataToSend.append("resume", formData.resume);
-//     formDataToSend.append("appliedJob", formData.appliedJob);
-
-//     try {
-//       const response = await axios.post(
-//         "http://localhost:5995/api/apply-job",
-//         formDataToSend,
-//         {
-//           headers: {
-//             "Content-Type": "multipart/form-data",
-//           },
-//         }
-//       );
-//       console.log("Form submitted:", response.data);
-//       toast.success("Job Applied Successfully");
-//       handleApplyModalClose();
-//     } catch (error) {
-//       console.error("Error submitting form:", error);
-//       toast.error("Error submitting application. Please try again later.");
-//     } finally {
-//       setIsSubmitting(false);
-//     }
-//   };
-
-
-// const handleFormSubmit = async (e) => {
-//     e.preventDefault();
-//     if (!validateForm()) {
-//       setIsSubmitting(false);
-//       return;
-//     }
-
-//     setIsSubmitting(true);
-
-//     const formDataToSend = new FormData();
-//     formDataToSend.append("name", formData.name);
-//     formDataToSend.append("email", formData.email);
-//     formDataToSend.append("phone", formData.phone);
-//     formDataToSend.append("resume", formData.resume);
-//     formDataToSend.append("appliedJob", formData.appliedJob);
-
-//     try {
-//       const response = await axios.post(
-//         "http://localhost:5995/api/apply-job",
-//         formDataToSend,
-//         {
-//           headers: {
-//             "Content-Type": "multipart/form-data",
-//           }
-//         }
-//       );
-//       console.log("Form submitted:", response.data);
-//       toast.success("Job Applied Successfully");
-//       handleApplyModalClose();
-//     } catch (error) {
-//       console.error("Error submitting form:", error);
-//       toast.error("Error submitting application. Please try again later.");
-//     } finally {
-//       setIsSubmitting(false);
-//     }
-//   };
-
-
-const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) {
       return;
@@ -218,11 +142,15 @@ const handleFormSubmit = async (e) => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <>
       <div>
         <Toaster />
       </div>
+      {
+        Isloading && <LogoLoader />
+      }
       <div className={CareerStyle.career_container}>
         <div className="container">
           <div className="row">
@@ -261,7 +189,7 @@ const handleFormSubmit = async (e) => {
                 src={selectedJob.imageUrl}
                 alt="network-error"
                 style={{ width: "100%", height: "60vh", marginBottom: "10px" }}
-                // className={CareerStyle.modalImage}
+              // className={CareerStyle.modalImage}
               />
               <Card.Text>
                 <strong>Company Overview:</strong> {selectedJob.companyOverview}
@@ -327,8 +255,8 @@ const handleFormSubmit = async (e) => {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                {formErrors.name}
-              </Form.Control.Feedback>
+                  {formErrors.name}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group controlId="formEmail" className="mt-3">
                 <Form.Label>Email</Form.Label>
@@ -339,24 +267,24 @@ const handleFormSubmit = async (e) => {
                   onChange={handleFormChange}
                   required
                 />
-                    <Form.Control.Feedback type="invalid">
-                {formErrors.email}
-              </Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  {formErrors.email}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group controlId="formPhone" className="mt-3">
-              <Form.Label>Phone Number</Form.Label>
-              <PhoneInput
-                country={'in'}
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                required
-                inputProps={{
-                  name: 'phone',
-                  required: true,
-                  autoFocus: true
-                }}
-              />
-            </Form.Group>
+                <Form.Label>Phone Number</Form.Label>
+                <PhoneInput
+                  country={'in'}
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                  required
+                  inputProps={{
+                    name: 'phone',
+                    required: true,
+                    autoFocus: true
+                  }}
+                />
+              </Form.Group>
               <Form.Group controlId="formResume" className="mt-3">
                 <Form.Label>Resume</Form.Label>
                 <Form.Control
@@ -366,8 +294,8 @@ const handleFormSubmit = async (e) => {
                   required
                 />
                 <Form.Control.Feedback type="invalid">
-                {formErrors.resume}
-              </Form.Control.Feedback>
+                  {formErrors.resume}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group controlId="formAppliedJob" className="mt-3">
                 <Form.Label>Applied Job</Form.Label>

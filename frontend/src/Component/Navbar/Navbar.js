@@ -4,14 +4,13 @@ import Navbar_css from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
-    <>
-      <div className={Navbar_css.topnavbarlink}>
         <div className={Navbar_css.navrouterlink}>
           <NavLink className={Navbar_css.navrouterlink} to="/about">
             ABOUT US
           </NavLink>
           <div className={Navbar_css.widthlink}></div>
         </div>
+
         <div className={Navbar_css.navrouterlink}>
           <NavLink className={Navbar_css.navrouterlink} to="/discover">
             DISCOVER
@@ -24,6 +23,7 @@ const Navbar = () => {
           </NavLink>
           <div className={Navbar_css.widthlink}></div>
         </div>
+
         <div className={Navbar_css.navrouterlink}>
           <NavLink className={Navbar_css.navrouterlink} to="/contact">
             CONTACT US
@@ -31,7 +31,6 @@ const Navbar = () => {
           <div className={Navbar_css.widthlink}></div>
         </div>
       </div>
-    </>
   );
 };
 

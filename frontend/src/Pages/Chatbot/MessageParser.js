@@ -6,7 +6,13 @@ const MessageParser = ({ children, actions }) => {
     if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hi")) {
       actions.handleHello();
     } else if (lowerCaseMessage.includes("contact")) {
-      actions.handleUserInput(message);
+      actions.handleContact(message);
+    } else if (lowerCaseMessage.includes("hr connect pro")) {
+      actions.handleHrConnectPro(message);
+    } else if (lowerCaseMessage.includes("connect era")) {
+      actions.handleHrConnectEra(message);
+    } else if  (lowerCaseMessage.includes("product") || lowerCaseMessage.includes("products")) {
+      actions.handleProduct(message);
     } else {
       actions.handleReject();
     }

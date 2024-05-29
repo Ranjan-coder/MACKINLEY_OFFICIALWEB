@@ -1,66 +1,68 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleHello = () => {
-    const botMessage = createChatBotMessage('Hello. Nice to meet you.');
+    const botMessage = createChatBotMessage("Hello. Nice to meet you.");
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
   };
 
-  const handleReject = ()=>{
-    const botMessage = createChatBotMessage("please ask the question related to this website, or you might have typo in your message")
+  const handleReject = () => {
+    const botMessage = createChatBotMessage(
+      "please ask the question related to this website, or you might have typo in your message"
+    );
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
-  }
+  };
 
-  const handlePrompt = (promptType) => {
-    let promptMessage;
-    if (promptType === 'name') {
-      promptMessage = createChatBotMessage('Please enter your name:');
-    } else if (promptType === 'email') {
-      promptMessage = createChatBotMessage('Please enter your email:');
-    } else if (promptType === 'phone') {
-      promptMessage = createChatBotMessage('Please enter your phone number:');
-    }
+  const handleContact = async () => {
+    const botMessage = createChatBotMessage("contactus@mackinlay.in");
     setState((prev) => ({
       ...prev,
-      messages: [...prev.messages, promptMessage],
+      messages: [...prev.messages, botMessage],
     }));
   };
 
-  const handleUserInput = async (message) => {
-    const lowerMessage = message.toLowerCase();
-    if (lowerMessage.includes('name')) {
-      handlePrompt('name');
-    } else if (lowerMessage.includes('email')) {
-      handlePrompt('email');
-    } else if (lowerMessage.includes('phone')) {
-      handlePrompt('phone');
-    } else {
-      try {
-        const response = await axios.post('http://localhost:8080/api/user-chat', {
-          message: lowerMessage,
-        });
-        const data = response.data; // axios already parses JSON
-        const botMessage = createChatBotMessage(data.message);
+  const handleProduct = () => {
+    const steps = [
+      "we have two products on stage",
+      "The first one is HR CONNECT PRO",
+      "The second is the CONNECT ERA",
+    ];
+
+    steps.forEach((step, index) => {
+      setTimeout(() => {
+        const botMessage = createChatBotMessage(step);
         setState((prev) => ({
           ...prev,
           messages: [...prev.messages, botMessage],
         }));
-      } catch (error) {
-        console.error('Error:', error);
-        const botMessage = createChatBotMessage('Error: Could not process your request.');
-        setState((prev) => ({
-          ...prev,
-          messages: [...prev.messages, botMessage],
-        }));
-      }
-    }
+      }, 1000 * index); 
+    });
+  };
+
+  const handleHrConnectPro = async () => {
+    const botMessage = createChatBotMessage(
+      "It is basically a job application where the you can apply for job as job seeker or be a employer to hire employess."
+    );
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleHrConnectEra = async () => {
+    const botMessage = createChatBotMessage(
+      "It is basically a dating application where couples meet together and make friendship or be love buds."
+    );
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
   };
 
   return (
@@ -70,8 +72,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
           actions: {
             handleHello,
             handleReject,
-            handlePrompt,
-            handleUserInput,
+            handleContact,
+            handleHrConnectPro,
+            handleHrConnectEra,
+            handleProduct,
           },
         });
       })}

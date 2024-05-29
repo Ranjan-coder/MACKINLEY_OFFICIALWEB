@@ -1,13 +1,11 @@
-import React, { lazy, Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom';
-import LogoLoader from '../Component/Logo_Loader/LogoLoader';
-import ProductData from '../Pages/Discover/ProductData';
-import ProductPage from '../Pages/Discover/ProductPage';
-const Home = lazy(() => import("../Pages/Home/Home"))
-const About = lazy(() => import("../Pages/Aboutus/About"))
-const Discover = lazy(() => import("../Pages/Discover/Discover"))
-const Career = lazy(() => import("../Pages/Career/Career"))
-const Contact = lazy(() => import("../Pages/Contact/Contact"))
+
+import React from 'react'
+import { Route,Routes } from 'react-router-dom';
+import Home from '../Pages/Home/Home';
+import About from '../Pages/Aboutus/About';
+import Discover from '../Pages/Discover/Discover';
+import Career from '../Pages/Career/Career';
+import Contact from '../Pages/Contact/Contact';
 
 const Routers = () => {
   return (

@@ -1,25 +1,24 @@
-
 import React from 'react'
 import { Route,Routes } from 'react-router-dom';
 import Home from '../Pages/Home/Home';
 import About from '../Pages/Aboutus/About';
 import Discover from '../Pages/Discover/Discover';
+import Service from '../Pages/Service/Service';
 import Career from '../Pages/Career/Career';
 import Contact from '../Pages/Contact/Contact';
 
 const Routers = () => {
   return (
     <>
-      <ProductData>
-        <Routes>
-          <Route path="/" element={<Suspense fallback={<LogoLoader />}> <Home /> </Suspense>} />
-          <Route path="/about" element={<Suspense fallback={<LogoLoader />}> <About /> </Suspense>} />
-          <Route path="/discover" element={<Suspense fallback={<LogoLoader />}> <Discover /> </Suspense>} />
-          <Route path="/discover/:id" element={<Suspense fallback={<LogoLoader />}> <ProductPage /> </Suspense>} />
-          <Route path="/career" element={<Suspense fallback={<LogoLoader />}> <Career /> </Suspense>} />
-          <Route path="/contact" element={<Suspense fallback={<LogoLoader />}> <Contact /> </Suspense>} />
-        </Routes>
-      </ProductData>
+
+    <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/discover' element={<Discover/>}/>
+        <Route path='/service' element={<Service/>}/>
+        <Route path='/career' element={<Career/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+    </Routes>
     </>
   );
 };

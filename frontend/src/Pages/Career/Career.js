@@ -6,13 +6,14 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
-
+import LogoLoader from "../../Component/Logo_Loader/LogoLoader";
 const Career = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showJobModal, setShowJobModal] = useState(false);
   const [showApplyModal, setShowApplyModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [Isloading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,13 +30,15 @@ const Career = () => {
   });
 
   useEffect(() => {
+    setLoading(true)
     axios
       .get("http://localhost:5995/api/get-jobs")
       .then((response) => {
+        setLoading(false)
         setJobs(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
+        setLoading(false)
         console.error("There was an error fetching the job data!", error);
       });
   }, []);
@@ -76,8 +79,7 @@ const Career = () => {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
-    setFormErrors({ ...formErrors, [name]: "" });
+    setFormErrors({ ...formErrors, [name]: '' });
   };
 
   const handlePhoneChange = (value) => {
@@ -103,6 +105,7 @@ const Career = () => {
     }
     return true;
   };
+
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -139,11 +142,15 @@ const Career = () => {
       setIsSubmitting(false);
     }
   };
+
   return (
     <>
       <div>
         <Toaster />
       </div>
+      {
+        Isloading && <LogoLoader />
+      }
       <div className={CareerStyle.career_container}>
         <div className="container">
           <div className="row">
@@ -182,7 +189,7 @@ const Career = () => {
                 src={selectedJob.imageUrl}
                 alt="network-error"
                 style={{ width: "100%", height: "60vh", marginBottom: "10px" }}
-                // className={CareerStyle.modalImage}
+              // className={CareerStyle.modalImage}
               />
               <Card.Text>
                 <strong>Company Overview:</strong> {selectedJob.companyOverview}
@@ -267,14 +274,14 @@ const Career = () => {
               <Form.Group controlId="formPhone" className="mt-3">
                 <Form.Label>Phone Number</Form.Label>
                 <PhoneInput
-                  country={"in"}
+                  country={'in'}
                   value={formData.phone}
                   onChange={handlePhoneChange}
                   required
                   inputProps={{
-                    name: "phone",
+                    name: 'phone',
                     required: true,
-                    autoFocus: true,
+                    autoFocus: true
                   }}
                 />
               </Form.Group>

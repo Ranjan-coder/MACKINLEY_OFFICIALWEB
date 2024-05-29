@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import CareerStyle from "./Career.module.css";
 import axios from "axios";
 import { Card, Modal, Button, Form } from "react-bootstrap";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 import LogoLoader from "../../Component/Logo_Loader/LogoLoader";
@@ -23,10 +23,10 @@ const Career = () => {
   });
 
   const [formErrors, setFormErrors] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    resume: '',
+    name: "",
+    email: "",
+    phone: "",
+    resume: "",
   });
 
   useEffect(() => {
@@ -79,7 +79,6 @@ const Career = () => {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
     setFormErrors({ ...formErrors, [name]: '' });
   };
 

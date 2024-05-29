@@ -10,10 +10,6 @@
 body {
     /* font-family: "Poetsen One", sans-serif; */
     font-family: "Merriweather", serif;
-
-    /* font-family: "Oswald", sans-serif; */
-    /* font-optical-sizing: auto; */
-    /* font-style: normal; */
 }
 
 .__discoverPage {
@@ -37,8 +33,7 @@ body {
     margin: .5em 0;
 }
 
-.__headerDesc,
-.__cardDescription {
+.__headerDesc,  .__cardDescription {
     color: rgb(100, 100, 100);
 }
 
@@ -81,8 +76,7 @@ body {
     line-height: 1.5;
 }
 
-.__cardTitle,
-.__cardDescription {
+.__cardTitle,   .__cardDescription {
     padding-left: 15px;
 }
 
@@ -184,8 +178,7 @@ body {
     margin: 0 -15px;
 }
 
-.col-lg-3,
-.col-md-3 {
+.col-lg-3,  .col-md-3 {
     padding: 0 15px;
     box-sizing: border-box;
     flex: 0 0 25%;

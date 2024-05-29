@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
-import hrconnectpro from '../../Assets/hrconnectpro.jpg';
-import connectera from '../../Assets/connectera.jpg';
+import hrconnectpro from '../../Assets/hrconnectpro.png';
+import connectera from '../../Assets/connect.jpg';
 import mediai from '../../Assets/mediAI.jpg';
 import globalGuardian from '../../Assets/globalguardian.png';
 

@@ -36,7 +36,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-style: italic;
 }
 
 .heroSection__heading::after,

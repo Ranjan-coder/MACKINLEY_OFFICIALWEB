@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import discover from './Discover.module.css'
 import hrconnectpro from '../../Assets/hrconnectpro.jpg';
-import connectera from '../../Assets/connectera.jpg';
+import connectera from '../../Assets/connect.jpg';
 import mediai from '../../Assets/mediAI.jpg';
 import globalGuardian from '../../Assets/globalguardian.png';
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -124,16 +124,3 @@ const Discover = () => {
 }
 
 export default Discover
-
-
-
-// {/* <div className="__services">
-//          <p className={discover.__serviceTag}>Consulting Services</p>
-//          <h1 className={discover.__serviceHead}>Our Services</h1>
-//          <div className={discover.__serviceContainer}>
-//            <div className={discover.__serviceCard}>
-//              <img className={discover.__cardImg} src={dataAnalytics} alt="" />
-//              <h4 className={discover.__cardTitle}>srthatrjh</h4>
-//            </div>
-//          </div>
-//        </div> */}

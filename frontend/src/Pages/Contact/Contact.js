@@ -5,6 +5,9 @@ import Col from "react-bootstrap/Col";
 import Contact_style from "../Contact/Contact.module.css";
 import support from "../../Assets/support.svg";
 import mail from "../../Assets/email.svg";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,16 +41,34 @@ const Contact = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted:", formData);
-      // Submit the form
+        try {
+            const response = await axios.post('http://localhost:5995/api/send-email', formData);
+
+            if (response.status !== 200) {
+                throw new Error('Failed to send email');
+            }
+
+            console.log('Email sent:', response.data);
+            toast.success('Email sent successfully');
+            setFormData({
+              product: "",
+              name: "",
+              email: "",
+              phone: "",
+              message: "",
+          });
+        } catch (error) {
+            console.error('Error:', error);
+            toast.error('Failed to send email');
+        }
     } else {
-      setErrors(newErrors);
+        setErrors(newErrors);
     }
-  };
+};
 
   const Data = [
     { Logo: support, Title: "Support", Details: "+91 88966 19811" },
@@ -55,6 +76,10 @@ const Contact = () => {
   ];
 
   return (
+    <>
+      <div>
+        <Toaster />
+      </div>
     <div className={Contact_style.contact_form}>
       <Container className={Contact_style.contact_details_form}>
         <Row className="justify-content-center align-items-center">
@@ -210,6 +235,7 @@ const Contact = () => {
         </Row>
       </Container>
     </div>
+    </>
   );
 };
 

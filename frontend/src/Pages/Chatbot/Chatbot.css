@@ -1,0 +1,33 @@
+.react-chatbot-kit-chat-container {
+    position: relative;
+    width: 275px;
+    z-index: 1;
+    height: 45vh;
+}
+
+.chatbot_main{
+    position: fixed;
+    top: 40%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.react-chatbot-kit-chat-message-container {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.react-chatbot-kit-chat-input-form {
+    width: 100%;
+    display: flex;
+    top: 9rem;
+    position: relative;
+}
+
+.react-chatbot-kit-chat-inner-container {
+    height: 410px !important;
+    background-color: #fff;
+    border-radius: 3px;
+    border-radius: 5px;
+}

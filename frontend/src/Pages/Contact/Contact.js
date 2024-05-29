@@ -139,31 +139,31 @@ const Contact = () => {
                   value="hrconnectpro"
                   className={Contact_style.cntctselect_drop}
                 >
-                  HR CONNECTPRO
+                  HRConnect Pro
                 </option>
                 <option
                   value="connectera"
                   className={Contact_style.cntctselect_drop}
                 >
-                  CONNECT ERA
+                  ConnectEra
                 </option>
                 <option
                   value="mediai"
                   className={Contact_style.cntctselect_drop}
                 >
-                  MEDI AI
+                  MediAI Connect
                 </option>
                 <option
                   value="globalguardian"
                   className={Contact_style.cntctselect_drop}
                 >
-                  GLOBAL GUARDIAN
+                  Global Guardian 
                 </option>
                 <option
-                  value="about"
+                  value="WorldSync"
                   className={Contact_style.cntctselect_drop}
                 >
-                  OTHER
+                  WorldSync!
                 </option>
               </select>
               <br />

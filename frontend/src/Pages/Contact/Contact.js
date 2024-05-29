@@ -27,6 +27,13 @@ const Contact = () => {
       ...formData,
       [name]: value,
     });
+
+    if (errors[name]) {
+      setErrors({
+          ...errors,
+          [name]: ''
+      });
+  }
   };
 
   const validate = () => {

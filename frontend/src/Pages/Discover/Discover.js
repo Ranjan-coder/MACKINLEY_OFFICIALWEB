@@ -5,7 +5,6 @@ import connectera from '../../Assets/connectera.jpg';
 import mediai from '../../Assets/mediAI.jpg';
 import globalGuardian from '../../Assets/globalguardian.png';
 import { FaArrowRightLong } from "react-icons/fa6";
-// import dataAnalytics from '../../Assets/DataAnalyticsandBusinessIntelligence.jpg';
 import { bucket } from './ProductData';
 import { Link } from 'react-router-dom';
 import ServiceCard from './ServicesCard'
@@ -24,8 +23,8 @@ const Discover = () => {
         <h1 className={discover.__headerText}>Dicover Mackinlay</h1>
         <p className={discover.__headerDesc}>Discover Innovation with <strong>HR Connect Pro</strong>, <strong>MediAI Connect</strong>, <strong>Connect-Era</strong>, and <strong>Global Guardian</strong> – Your Gateway to Cutting-Edge Solutions!</p>
         <p className={discover.__headerDesc}>A one-stop shop for innovation! -solutions for every need. Explore now!</p>
-      </header>
       <hr />
+      </header>
 
       <div className={discover.__container}>
         {data?.filter(item => item.cat === 'HRConnectPro')
@@ -73,7 +72,7 @@ const Discover = () => {
                 <div className={discover.__card} >
                   <img className={discover.__cardImg} src={connectera} alt="" />
                   <h4 className={discover.__cardTitle}>{item.cat} 💕</h4>
-                  <p className={discover.__cardDescription}>a global community where meaningful relationships flourish.</p>
+                  <p className={discover.__cardDescription}>A global community where meaningful relationships flourish.</p>
                   <Link to={`/discover/${item.cat}`}>
                     <button className={discover.__cardBtn}>
                       <span className={discover.__learnBtn}>Learn More</span>
@@ -105,7 +104,9 @@ const Discover = () => {
           })}
       </div>
 
+
       {/* Service Contents ------------------------------------> */}
+
       <div className={discover.ServicePageContainer}>
         <ServiceCard head="Our Best Services" />
         <hr className={discover.hrLineOurServices} />
@@ -113,12 +114,11 @@ const Discover = () => {
         </p>
         {ServiceItems.map((chunk, index) => (
           <div key={index}>
-            <ServiceCard
-              serviceitem={chunk}
-            />
+            <ServiceCard serviceitem={chunk} />
           </div>
         ))}
       </div>
+
     </div>
   )
 }
@@ -128,13 +128,12 @@ export default Discover
 
 
 // {/* <div className="__services">
-//         <p className={discover.__serviceTag}>Consulting Services</p>
-//         <h1 className={discover.__serviceHead}>Our Services</h1>
-
-//         <div className={discover.__serviceContainer}>
-//           <div className={discover.__serviceCard}>
-//             <img className={discover.__cardImg} src={dataAnalytics} alt="" />
-//             <h4 className={discover.__cardTitle}>srthatrjh</h4>
-//           </div>
-//         </div>
-//       </div> */}
+//          <p className={discover.__serviceTag}>Consulting Services</p>
+//          <h1 className={discover.__serviceHead}>Our Services</h1>
+//          <div className={discover.__serviceContainer}>
+//            <div className={discover.__serviceCard}>
+//              <img className={discover.__cardImg} src={dataAnalytics} alt="" />
+//              <h4 className={discover.__cardTitle}>srthatrjh</h4>
+//            </div>
+//          </div>
+//        </div> */}

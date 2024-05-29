@@ -7,12 +7,6 @@ const Navbar = () => {
     <>
       <div className={Navbar_css.topnavbarlink}>
         <div className={Navbar_css.navrouterlink}>
-          <NavLink className={Navbar_css.navrouterlink} to="/">
-            HOME
-          </NavLink>
-          <div className={Navbar_css.widthlink}></div>
-        </div>
-        <div className={Navbar_css.navrouterlink}>
           <NavLink className={Navbar_css.navrouterlink} to="/about">
             ABOUT US
           </NavLink>
@@ -21,12 +15,6 @@ const Navbar = () => {
         <div className={Navbar_css.navrouterlink}>
           <NavLink className={Navbar_css.navrouterlink} to="/discover">
             DISCOVER
-          </NavLink>
-          <div className={Navbar_css.widthlink}></div>
-        </div>
-        <div className={Navbar_css.navrouterlink}>
-          <NavLink className={Navbar_css.navrouterlink} to="/service">
-            SERVICE
           </NavLink>
           <div className={Navbar_css.widthlink}></div>
         </div>

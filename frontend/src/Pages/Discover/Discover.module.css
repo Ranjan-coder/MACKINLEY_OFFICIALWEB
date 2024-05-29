@@ -17,9 +17,7 @@ body {
 }
 
 .__discoverPage {
-    /* border: 1px solid red; */
     margin: 3em;
-    /* height: 100vh; */
 }
 
 .__header {
@@ -33,7 +31,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-style: italic;
 }
 
 .__headerDesc {
@@ -46,7 +43,6 @@ body {
 }
 
 .__container {
-    /* border: 1px solid; */
     margin: 2em 0;
     display: flex;
     justify-content: center;
@@ -65,7 +61,6 @@ body {
 }
 
 .__card:hover {
-    /* background: rgb(240, 246, 251); */
     transform: translateY(-10px);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -82,7 +77,6 @@ body {
 }
 
 .__cardDescription {
-    /* border: 1px solid red; */
     margin-top: .5em;
     line-height: 1.5;
 }
@@ -116,6 +110,21 @@ body {
     left: 15px;
 }
 
+
+/* Details Page------------------------ */
+.__mainContainer {
+    margin: 3em;
+}
+
+.__image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    padding: 0 1em;
+}
+
+
+/* Service Page------------------------ */
 .__serviceContainer {
     border: 1px solid red;
 }
@@ -126,59 +135,32 @@ body {
     border: 1px solid blue;
 }
 
-/* Details Page------------------------ */
-.__mainContainer{
-    /* border: 1px solid; */
-    margin: 3em;
-}
-.__image{
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    padding: 0 1em;
-}
-
-@media only screen and (max-width:1056px) and (min-width:770px){
-    .__card{
-        width: 450px;
-        height: 440px;
-    }
-    .__cardImg{
-        height: 240px;
-    }
-}
-
-/* Service Page ---------------------- */
-.ServicePageContainer{
-    margin:10px 35px ;
+.ServicePageContainer {
     padding-top: 10;
+}
 
+.Container {
+    padding: 1em 0;
 }
-.Container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.hrLineOurServices{
+
+.hrLineOurServices {
     width: 10vw;
     height: 3px;
     margin-left: 2%;
     margin-top: -10px;
-    color:#0056b3;
+    color: #0056b3;
     background: #007bff;
 }
+
 .service {
     padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
 }
-.ServiceDescription{
+
+.ServiceDescription {
     color: grey;
     margin: 10px;
-}
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
 }
 
 .section-header {
@@ -199,7 +181,6 @@ body {
 .row {
     display: flex;
     flex-wrap: wrap;
-
     margin: 0 -15px;
 }
 
@@ -209,7 +190,7 @@ body {
     box-sizing: border-box;
     flex: 0 0 25%;
     max-width: 25%;
-    
+
 }
 
 .card {
@@ -217,11 +198,10 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     overflow: hidden;
-    margin-right: 20px;
-    padding: 10px 10px ;
-    box-shadow: 0 4px 8px grey;
+    padding: 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     height: 22rem;
-  }
+}
 
 .card img {
     display: block;
@@ -236,20 +216,21 @@ body {
 }
 
 .cardtitle {
-    color:black;
+    color: black;
     font-size: 1rem;
     font-weight: bold;
-    margin: 5px  5px;
+    margin: 5px 5px;
 }
 
 .cardText {
     font-size: 1rem;
-    color:  grey;
+    color: grey;
     margin: 0 0 20px;
     font-style: italic;
 }
-.demoButton{
-    color:white;
+
+.demoButton {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -264,4 +245,13 @@ body {
     margin-bottom: 18px;
 }
 
+@media only screen and (max-width:1056px) and (min-width:770px) {
+    .__card {
+        width: 450px;
+        height: 440px;
+    }
 
+    .__cardImg {
+        height: 240px;
+    }
+}

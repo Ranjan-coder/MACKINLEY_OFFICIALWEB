@@ -1,4 +1,8 @@
 import { createContext, useState } from 'react';
+import hrconnectpro from '../../Assets/hrconnectpro.jpg';
+import connectera from '../../Assets/connectera.jpg';
+import mediai from '../../Assets/mediAI.jpg';
+import globalGuardian from '../../Assets/globalguardian.png';
 
 export const bucket = createContext();
 
@@ -68,7 +72,7 @@ export default function ProductData(props) {
                 }
             ],
             caption: "Ready to transform your HR processes? Experience the power of HRConnect Pro and join the future of HR management today.",
-            img: "https://www.pinkvilla.com/images/2022-09/deepika%20padukone%20ranveer%20singh%20reception.jpg",
+            img: hrconnectpro,
         },
         {
             id: 2,
@@ -125,6 +129,7 @@ export default function ProductData(props) {
                     desc: "MediAI Connect is more than just a product; it's a revolution in healthcare technology. As we prepare for our global launch, we invite you to join us on this journey to enhance healthcare delivery and improve patient outcomes worldwide."
                 }
             ],
+            img: mediai
         },
         {
             id: 3,
@@ -171,6 +176,7 @@ export default function ProductData(props) {
                     desc: "Ready to embark on a journey of genuine connections and personal growth? Sign up now and experience the magic of ConnectEra. Whether you're looking to make new friends, find love, or simply explore new cultures, ConnectEra is your gateway to a more connected world."
                 }
             ],
+            img: connectera
         },
         {
             id: 4,
@@ -260,6 +266,7 @@ export default function ProductData(props) {
                 }
             ],
             caption: "Ready to learn more about how GlobalGuardian can protect your identity and enhance your banking experience? Contact us today to schedule a demo or speak with one of our experts.",
+            img: globalGuardian
         },
     ])
     return (

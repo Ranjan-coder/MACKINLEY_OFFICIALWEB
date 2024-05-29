@@ -24,7 +24,7 @@ const Service = (props) => {
             <div className={discover.container}>
                 <div className={discover.sectionHeader}>
                     {props.para && <p>{props.para}</p>}
-                    <h2>{props.head}</h2>
+                    <h2 className={discover.__headerText}>{props.head}</h2>
                 </div>
                 <div className={discover.row}>
                     {serviceitem.map((value, index) => (

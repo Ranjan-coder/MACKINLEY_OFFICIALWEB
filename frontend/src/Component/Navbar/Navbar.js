@@ -5,14 +5,7 @@ import Navbar_css from "./Navbar.module.css";
 const Navbar = () => {
   return (
       <div className={Navbar_css.topnavbarlink}>
-
-        <div className={Navbar_css.navrouterlink}>
-          <NavLink className={Navbar_css.navrouterlink} to="/">
-            HOME
-          </NavLink>
-          <div className={Navbar_css.widthlink}></div>
-        </div>
-
+        
         <div className={Navbar_css.navrouterlink}>
           <NavLink className={Navbar_css.navrouterlink} to="/about">
             ABOUT US

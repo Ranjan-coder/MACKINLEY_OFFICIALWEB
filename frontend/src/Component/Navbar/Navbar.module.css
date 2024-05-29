@@ -1,11 +1,12 @@
-.topnavbarlink{
-    display: flex;
-    justify-content: space-evenly;
-    width: 50vw;
+.topnavbarlink {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
 }
-.navrouterlink{
-    color: #282454;
-    text-decoration: none;
+
+.navrouterlink {
+  color: #282454;
+  text-decoration: none;
 }
 
 .topnavbarlink {
@@ -13,13 +14,16 @@
   justify-content: space-evenly;
   width: 50vw;
 }
+
 .navrouterlink {
   color: #282454;
 }
+
 .navrouterlink:hover {
   color: blue;
   transition: all 0.5s;
 }
+
 .widthlink {
   height: 2px;
   width: 30px;

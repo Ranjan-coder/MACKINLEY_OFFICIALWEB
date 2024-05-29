@@ -5,12 +5,18 @@ import connectera from '../../Assets/connectera.jpg';
 import mediai from '../../Assets/mediAI.jpg';
 import globalGuardian from '../../Assets/globalguardian.png';
 import { FaArrowRightLong } from "react-icons/fa6";
-import dataAnalytics from '../../Assets/DataAnalyticsandBusinessIntelligence.jpg';
+// import dataAnalytics from '../../Assets/DataAnalyticsandBusinessIntelligence.jpg';
 import { bucket } from './ProductData';
 import { Link } from 'react-router-dom';
+import ServiceCard from './ServicesCard'
+import serviceitems from '../../Data/ServicePageData'
 
 const Discover = () => {
   const [data] = useContext(bucket)
+  const ServiceItems = [];
+  for (let i = 0; i < serviceitems.length; i += 4) {
+    ServiceItems.push(serviceitems.slice(i, i + 4));
+  }
 
   return (
     <div className={discover.__discoverPage}>
@@ -98,22 +104,37 @@ const Discover = () => {
             )
           })}
       </div>
-      {/* <Outlet /> */}
 
-      <div className="__services">
-        <p className={discover.__serviceTag}>Consulting Services</p>
-        <h1 className={discover.__serviceHead}>Our Services</h1>
-
-        <div className={discover.__serviceContainer}>
-          <div className={discover.__serviceCard}>
-            <img className={discover.__cardImg} src={dataAnalytics} alt="" />
-            <h4 className={discover.__cardTitle}>srthatrjh</h4>
+      {/* Service Contents ------------------------------------> */}
+      <div className={discover.ServicePageContainer}>
+        <ServiceCard head="Our Best Services" />
+        <hr className={discover.hrLineOurServices} />
+        <p className={discover.ServiceDescription}>At Mackinlay, we are dedicated to providing top-notch UI/UX design and IT services to help your business thrive in the digital world. Our comprehensive service offerings are designed to meet your unique needs and drive your success.
+        </p>
+        {ServiceItems.map((chunk, index) => (
+          <div key={index}>
+            <ServiceCard
+              serviceitem={chunk}
+            />
           </div>
-        </div>
+        ))}
       </div>
-
     </div>
   )
 }
 
 export default Discover
+
+
+
+// {/* <div className="__services">
+//         <p className={discover.__serviceTag}>Consulting Services</p>
+//         <h1 className={discover.__serviceHead}>Our Services</h1>
+
+//         <div className={discover.__serviceContainer}>
+//           <div className={discover.__serviceCard}>
+//             <img className={discover.__cardImg} src={dataAnalytics} alt="" />
+//             <h4 className={discover.__cardTitle}>srthatrjh</h4>
+//           </div>
+//         </div>
+//       </div> */}

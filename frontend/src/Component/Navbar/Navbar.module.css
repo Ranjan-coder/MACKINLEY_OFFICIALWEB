@@ -1,6 +1,13 @@
-a {
-  text-decoration: none !important;
+.topnavbarlink{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50vw;
 }
+.navrouterlink{
+    color: #282454;
+    text-decoration: none;
+}
+
 .topnavbarlink {
   display: flex;
   justify-content: space-evenly;

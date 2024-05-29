@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom';
 import LogoLoader from '../Component/Logo_Loader/LogoLoader';
@@ -9,10 +10,21 @@ const Discover = lazy(() => import("../Pages/Discover/Discover"))
 const Service = lazy(() => import("../Pages/Service/Service"))
 const Career = lazy(() => import("../Pages/Career/Career"))
 const Contact = lazy(() => import("../Pages/Contact/Contact"))
+=======
+import React from 'react'
+import { Route,Routes } from 'react-router-dom';
+import Home from '../Pages/Home/Home';
+import About from '../Pages/Aboutus/About';
+import Discover from '../Pages/Discover/Discover';
+import Service from '../Pages/Service/Service';
+import Career from '../Pages/Career/Career';
+import Contact from '../Pages/Contact/Contact';
+>>>>>>> 2c6ab7b01f495d432a034d39cdadc6ecfe89879c
 
 const Routers = () => {
   return (
     <>
+<<<<<<< HEAD
       <ProductData>
         <Routes>
           <Route path="/" element={<Suspense fallback={<LogoLoader />}> <Home /> </Suspense>} />
@@ -24,6 +36,17 @@ const Routers = () => {
           <Route path="/contact" element={<Suspense fallback={<LogoLoader />}> <Contact /> </Suspense>} />
         </Routes>
       </ProductData>
+=======
+
+    <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/discover' element={<Discover/>}/>
+        <Route path='/service' element={<Service/>}/>
+        <Route path='/career' element={<Career/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+    </Routes>
+>>>>>>> 2c6ab7b01f495d432a034d39cdadc6ecfe89879c
     </>
   );
 };

@@ -8,6 +8,8 @@ import mail from "../../Assets/email.svg";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 import axios from "axios";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,6 +50,11 @@ const Contact = () => {
     if (!formData.message) newErrors.message = "Message is required";
     return newErrors;
   };
+
+  const handlePhoneChange = (value) => {
+    setFormData({ ...formData, phone: value });
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -136,7 +143,7 @@ const Contact = () => {
               </div>
             </Col>
             <Col xl={3} lg={4} md={12}>
-              <form onSubmit={handleSubmit} noValidate>
+               <form onSubmit={handleSubmit} noValidate>
                 <input
                   type="text"
                   id="name"
@@ -153,20 +160,24 @@ const Contact = () => {
                 <br />
                 <br />
 
-                <input
+                <PhoneInput
+                 country={'in'}
                   type="tel"
                   id="phone"
-                  name="phone"
                   value={formData.phone}
-                  onChange={handleChange}
+                  onChange={handlePhoneChange}
                   required
                   placeholder="Phone"
-                  className={Contact_style.contact_phone}
+                  inputProps={{
+                    name: 'phone',
+                    required: true,
+                  }}
+                  containerClass={Contact_style.contact_input_container}
+                  inputClass={Contact_style.contact_input}
                 />
                 {errors.phone && (
                   <span className={Contact_style.error}>{errors.phone}</span>
                 )}
-                <br />
                 <br />
 
                 <input
@@ -249,7 +260,7 @@ const Contact = () => {
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
-              </form>
+              </form> 
             </Col>
           </Row>
         </Container>

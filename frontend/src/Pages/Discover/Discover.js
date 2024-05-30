@@ -9,6 +9,11 @@ import { bucket } from './ProductData';
 import { Link } from 'react-router-dom';
 import ServiceCard from './ServicesCard'
 import serviceitems from '../../Data/ServicePageData'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import './styles.css';
+import { Pagination, Navigation } from 'swiper/modules';
 
 const Discover = () => {
   const [data] = useContext(bucket)
@@ -20,13 +25,133 @@ const Discover = () => {
   return (
     <div className={discover.__discoverPage}>
       <header className={discover.__header}>
-        <h1 className={discover.__headerText}>Dicover Mackinlay</h1>
+        <h2 className={discover.__headerText}>Dicover Mackinlay</h2>
+        <hr className={discover.hrLineOurServices} />
         <p className={discover.__headerDesc}>Discover Innovation with <strong>HR Connect Pro</strong>, <strong>MediAI Connect</strong>, <strong>Connect-Era</strong>, and <strong>Global Guardian</strong> – Your Gateway to Cutting-Edge Solutions!</p>
         <p className={discover.__headerDesc}>A one-stop shop for innovation! -solutions for every need. Explore now!</p>
-      <hr />
       </header>
 
-      <div className={discover.__container}>
+      <Swiper
+        style={{ padding: "2em 1em" }}
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{ clickable: true, }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+        breakpoints={{
+          375: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          425: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+          1440: {
+            slidesPerView: 5,
+            spaceBetween: 280,
+          },
+        }}
+      >
+        <SwiperSlide>
+          {data?.filter(item => item.cat === 'HRConnectPro')
+            .map((item, id) => {
+              return (
+                <div key={id}>
+                  <div className={discover.__card} >
+                    <img className={discover.__cardImg} src={hrconnectpro} alt="" />
+                    <h4 className={discover.__cardTitle}>{item.title.slice(0, 14)} 🧑‍💻</h4>
+                    <p className={discover.__cardDescription}>Your comprehensive solution for transforming HR management</p>
+                    <Link to={`/discover/${item.cat}`}>
+                      <button className={discover.__cardBtn}>
+                        <span className={discover.__learnBtn}>Learn More</span>
+                        <FaArrowRightLong className={discover.__arrowIcon} />
+                      </button>
+                    </Link>
+                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                  </div>
+                </div>
+              )
+            })}
+        </SwiperSlide>
+        <SwiperSlide>{data?.filter(item => item.cat === 'MediAI')
+          .map((item, id) => {
+            return (
+              <div key={id}>
+                <div className={discover.__card} >
+                  <img className={discover.__cardImg} src={mediai} alt="" />
+                  <h4 className={discover.__cardTitle}>{item.title.slice(0, 14)} 🩺</h4>
+                  <p className={discover.__cardDescription}>An innovative healthcare platform designed to transform the way medical services are delivered.</p>
+                  <Link to={`/discover/${item.cat}`}>
+                    <button className={discover.__cardBtn}>
+                      <span className={discover.__learnBtn}>Learn More</span>
+                      <FaArrowRightLong className={discover.__arrowIcon} />
+                    </button>
+                  </Link>
+                  <button className={discover.__demoBtn}>Ask for a demo</button>
+                </div>
+              </div>
+            )
+          })}
+        </SwiperSlide>
+        <SwiperSlide>
+          {data?.filter(item => item.cat === 'Connect-Era')
+            .map((item, id) => {
+              return (
+                <div key={id}>
+                  <div className={discover.__card} >
+                    <img className={discover.__cardImg} src={connectera} alt="" />
+                    <h4 className={discover.__cardTitle}>{item.cat} 💕</h4>
+                    <p className={discover.__cardDescription}>A global community where meaningful relationships flourish.</p>
+                    <Link to={`/discover/${item.cat}`}>
+                      <button className={discover.__cardBtn}>
+                        <span className={discover.__learnBtn}>Learn More</span>
+                        <FaArrowRightLong className={discover.__arrowIcon} />
+                      </button>
+                    </Link>
+                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                  </div>
+                </div>
+              )
+            })}
+        </SwiperSlide>
+        <SwiperSlide>
+          {data?.filter(item => item.cat === 'Global-Guardian')
+            .map((item, id) => {
+              return (
+                <div key={id}>
+                  <div className={discover.__card} >
+                    <img className={discover.__cardImg} src={globalGuardian} alt="" />
+                    <h4 className={discover.__cardTitle}>{item.cat} 🛡️</h4>
+                    <p className={discover.__cardDescription}>Elevating HR Management to New Heights.</p>
+                    <Link to={`/discover/${item.cat}`}>
+                      <button className={discover.__cardBtn}>
+                        <span className={discover.__learnBtn}>Learn More</span>
+                        <FaArrowRightLong className={discover.__arrowIcon} />
+                      </button>
+                    </Link>
+                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                  </div>
+                </div>
+              )
+            })}
+        </SwiperSlide>
+        <SwiperSlide>
+          Slide 5
+        </SwiperSlide>
+      </Swiper>
+
+
+      {/* <div className={discover.__container}>
         {data?.filter(item => item.cat === 'HRConnectPro')
           .map((item, id) => {
             return (
@@ -102,7 +227,7 @@ const Discover = () => {
               </div>
             )
           })}
-      </div>
+      </div> */}
 
 
       {/* Service Contents ------------------------------------> */}

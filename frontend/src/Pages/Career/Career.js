@@ -156,7 +156,7 @@ const Career = () => {
           <div className="row">
             {jobs.map((job) => (
               <div key={job._id} className="col-md-4 mb-3">
-                <Card onClick={() => handleJobClick(job)}>
+                <Card onClick={() => handleJobClick(job)} className={CareerStyle.card}>
                   <Card.Body>
                     <Card.Header>
                       <img

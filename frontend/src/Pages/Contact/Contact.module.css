@@ -6,7 +6,7 @@
 .contact_name,
 .contact_email,
 .contact_phone {
-  width: 100%;
+  width: 300px;
   padding: 10px;
   height: 40px;
   outline: none;
@@ -16,7 +16,7 @@
   border: none;
 }
 .contact_message {
-  width: 100%;
+  width: 300px;
   padding: 10px;
   outline: none;
   font-family: "Merriweather", serif;
@@ -29,7 +29,7 @@
 .contact_button {
   display: flex;
   margin: 0px auto;
-  width: 100%;
+  width: 300px;
   height: 50px;
   justify-content: center;
   align-items: center;
@@ -88,7 +88,7 @@
   font-weight: 400;
 }
 .cntctselect {
-  width: 100%;
+  width: 300px;
   padding: 10px;
   height: 40px;
   outline: none;

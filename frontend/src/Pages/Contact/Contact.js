@@ -5,6 +5,9 @@ import Col from "react-bootstrap/Col";
 import Contact_style from "../Contact/Contact.module.css";
 import support from "../../Assets/support.svg";
 import mail from "../../Assets/email.svg";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +19,7 @@ const Contact = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +27,13 @@ const Contact = () => {
       ...formData,
       [name]: value,
     });
+
+    if (errors[name]) {
+      setErrors({
+          ...errors,
+          [name]: ''
+      });
+  }
   };
 
   const validate = () => {
@@ -38,12 +49,38 @@ const Contact = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted:", formData);
-      // Submit the form
+      setIsSubmitting(true);
+      try {
+        const response = await axios.post(
+          "http://localhost:5995/api/send-email",
+          formData
+        );
+
+        if (response.status !== 200) {
+          throw new Error("Failed to send email");
+        }
+
+        console.log("Email sent:", response.data);
+        toast.success("Email sent successfully");
+
+        // Clear form data on success
+        setFormData({
+          product: "",
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } catch (error) {
+        console.error("Error:", error);
+        toast.error("Failed to send email");
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       setErrors(newErrors);
     }
@@ -55,161 +92,169 @@ const Contact = () => {
   ];
 
   return (
-    <div className={Contact_style.contact_form}>
-      <Container className={Contact_style.contact_details_form}>
-        <Row className="justify-content-center align-items-center">
-          <Col xl={6} lg={6} md={12}>
-            <div className={Contact_style.contact_content}>
-              <div className={Contact_style.contact_title}>
-                Need Help? <br /> Contact Mackinlay
-              </div>
+    <>
+      <div>
+        <Toaster />
+      </div>
+      <div className={Contact_style.contact_form}>
+        <Container className={Contact_style.contact_details_form}>
+          <Row className="justify-content-center align-items-center">
+            <Col xl={6} lg={6} md={12}>
               <div className={Contact_style.contact_content}>
-                Doesn’t matter if you are new to us or already a part of the
-                Mackinlay family, we are here to help. Reach out to us for
-                anything you need and we will do our best to resolve your
-                inquiry.
-              </div>
-              <div className={Contact_style.contact_details_title}>
-                Contact Us
-              </div>
-              {Data.map((value, index) => (
-                <div
-                  className={Contact_style.contact_details_container}
-                  key={index}
-                >
-                  <div className={Contact_style.contact_details_logo}>
-                    <img
-                      src={value.Logo}
-                      alt=""
-                      className={Contact_style.contact_details_logo_image}
-                    />
-                  </div>
-                  <div className={Contact_style.contact_details_logo_title}>
-                    {value.Title}:
-                  </div>
-                  <div className={Contact_style.contact_details_number}>
-                    {value.Details}
-                  </div>
+                <div className={Contact_style.contact_title}>
+                  Need Help? <br /> Contact Mackinlay
                 </div>
-              ))}
-            </div>
-          </Col>
-          <Col xl={3} lg={4} md={12}>
-            <form onSubmit={handleSubmit} noValidate>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Name"
-                className={Contact_style.contact_name}
-              />
-              {errors.name && (
-                <span className={Contact_style.error}>{errors.name}</span>
-              )}
-              <br />
-              <br />
+                <div className={Contact_style.contact_content}>
+                  Doesn’t matter if you are new to us or already a part of the
+                  Mackinlay family, we are here to help. Reach out to us for
+                  anything you need and we will do our best to resolve your
+                  inquiry.
+                </div>
+                <div className={Contact_style.contact_details_title}>
+                  Contact Us
+                </div>
+                {Data.map((value, index) => (
+                  <div
+                    className={Contact_style.contact_details_container}
+                    key={index}
+                  >
+                    <div className={Contact_style.contact_details_logo}>
+                      <img
+                        src={value.Logo}
+                        alt=""
+                        className={Contact_style.contact_details_logo_image}
+                      />
+                    </div>
+                    <div className={Contact_style.contact_details_logo_title}>
+                      {value.Title}:
+                    </div>
+                    <div className={Contact_style.contact_details_number}>
+                      {value.Details}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Col>
+            <Col xl={3} lg={4} md={12}>
+              <form onSubmit={handleSubmit} noValidate>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Name"
+                  className={Contact_style.contact_name}
+                />
+                {errors.name && (
+                  <span className={Contact_style.error}>{errors.name}</span>
+                )}
+                <br />
+                <br />
 
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="Email"
-                className={Contact_style.contact_email}
-              />
-              {errors.email && (
-                <span className={Contact_style.error}>{errors.email}</span>
-              )}
-              <br />
-              <br />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  placeholder="Phone"
+                  className={Contact_style.contact_phone}
+                />
+                {errors.phone && (
+                  <span className={Contact_style.error}>{errors.phone}</span>
+                )}
+                <br />
+                <br />
 
-              <select
-                name="product"
-                value={formData.product}
-                onChange={handleChange}
-                className={Contact_style.cntctselect}
-              >
-                <option value="">Select a product</option>
-                <option
-                  value="hrconnectpro"
-                  className={Contact_style.cntctselect_drop}
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="Email"
+                  className={Contact_style.contact_email}
+                />
+                {errors.email && (
+                  <span className={Contact_style.error}>{errors.email}</span>
+                )}
+                <br />
+                <br />
+                <select
+                  name="product"
+                  value={formData.product}
+                  onChange={handleChange}
+                  className={Contact_style.cntctselect}
                 >
-                  HRConnect Pro
-                </option>
-                <option
-                  value="connectera"
-                  className={Contact_style.cntctselect_drop}
-                >
-                  ConnectEra
-                </option>
-                <option
-                  value="mediai"
-                  className={Contact_style.cntctselect_drop}
-                >
-                  MediAI Connect
-                </option>
-                <option
-                  value="globalguardian"
-                  className={Contact_style.cntctselect_drop}
-                >
-                  Global Guardian 
-                </option>
-                <option
-                  value="WorldSync"
-                  className={Contact_style.cntctselect_drop}
-                >
-                  WorldSync!
-                </option>
-              </select>
-              <br />
-              <br />
+                  <option value="">Select a product</option>
+                  <option
+                    value="hrconnectpro"
+                    className={Contact_style.cntctselect_drop}
+                  >
+                    HRConnect Pro
+                  </option>
+                  <option
+                    value="connectera"
+                    className={Contact_style.cntctselect_drop}
+                  >
+                    ConnectEra
+                  </option>
+                  <option
+                    value="mediai"
+                    className={Contact_style.cntctselect_drop}
+                  >
+                    Medi AI Connect
+                  </option>
+                  <option
+                    value="globalguardian"
+                    className={Contact_style.cntctselect_drop}
+                  >
+                    Global Guardian Connect
+                  </option>
+                  <option
+                    value="about"
+                    className={Contact_style.cntctselect_drop}
+                  >
+                    OTHER
+                  </option>
+                </select>
+                <br />
+                <br />
 
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                placeholder="Phone"
-                className={Contact_style.contact_phone}
-              />
-              {errors.phone && (
-                <span className={Contact_style.error}>{errors.phone}</span>
-              )}
-              <br />
-              <br />
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  cols="50"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Message"
+                  className={Contact_style.contact_message}
+                ></textarea>
+                {errors.message && (
+                  <span className={Contact_style.error}>{errors.message}</span>
+                )}
+                <br />
+                <br />
 
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                cols="50"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder="Your Message"
-                className={Contact_style.contact_message}
-              ></textarea>
-              {errors.message && (
-                <span className={Contact_style.error}>{errors.message}</span>
-              )}
-              <br />
-              <br />
-
-              <button type="submit" className={Contact_style.contact_button}>
-                Submit
-              </button>
-            </form>
-          </Col>
-        </Row>
-      </Container>
-    </div>
+                <button
+                  type="submit"
+                  className={Contact_style.contact_button}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit"}
+                </button>
+              </form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 

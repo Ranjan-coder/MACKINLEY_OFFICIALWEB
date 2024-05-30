@@ -25,23 +25,19 @@ const Footer = () => {
     },
     {
       Title: "ABOUT US",
-      Link: "/",
+      Link: "/about",
     },
     {
       Title: "DISCOVER",
-      Link: "/",
-    },
-    {
-      Title: "SERVICE",
-      Link: "/",
+      Link: "/discover",
     },
     {
       Title: "CAREER",
-      Link: "/",
+      Link: "/career",
     },
     {
       Title: "CONTACT",
-      Link: "/",
+      Link: "/contact",
     },
   ];
 
@@ -122,14 +118,20 @@ const Footer = () => {
                 <div className={Footer_css.quick_links_underline}></div>
                 <div className={Footer_css.quick_links_space}>
                   {Links.map((value, index) => (
-                    <div className={Footer_css.quick_links_data} key={index}>
-                      <MdOutlineKeyboardArrowRight
-                        className={Footer_css.quick_links_data_icon}
-                      />
-                      <div className={Footer_css.quick_links_data_cnt}>
-                        {value.Title}
+                    <a
+                      href={value.Link}
+                      key={index}
+                      className={Footer_css.quick_link_anchor}
+                    >
+                      <div className={Footer_css.quick_links_data}>
+                        <MdOutlineKeyboardArrowRight
+                          className={Footer_css.quick_links_data_icon}
+                        />
+                        <div className={Footer_css.quick_links_data_cnt}>
+                          {value.Title}
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>

@@ -1,10 +1,66 @@
-.topnavbarlink {
+ .navmenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+.officelogo{
+  height: 50px;
+  cursor: pointer;
+}
+.navrouters{
   display: flex;
   justify-content: space-evenly;
-  width: 40vw;
+  width: 40%;
+}
+.navmenuham{
+  display: none;
+}
+.navrouterlink {
+  color: #282454;
+  text-decoration: none;
+}
+.navroutersham{
+  display: none;
 }
 
-.navrouterlink {
+
+
+@media screen and (max-width:426px){
+  
+  .navrouters{
+    display: none;
+  }
+  .navmenuham{
+    display: block;
+    position: static;
+    top: 5px;
+  }
+  .navrouters{
+    display: none;
+  }
+  .navroutersham{
+    display: flex;
+    background-color: #2e1258;
+    flex-direction: column;
+    /* position: static; */
+    top: 150px;
+    /* width: 200px; */
+    z-index: 1;
+    left: -20;
+    
+  }
+  .navrouterlink{
+    color: aliceblue;
+  }
+}
+
+
+
+
+
+
+/* .navrouterlink {
   color: #282454;
   text-decoration: none;
 }
@@ -28,4 +84,4 @@
   height: 2px;
   width: 30px;
   background-color: #f8a8a8;
-}
+}  */

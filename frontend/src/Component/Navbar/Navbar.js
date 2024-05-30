@@ -3,6 +3,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Navbar_css from "./Navbar.module.css";
 import officiallogo from "../../Assets/officiallogo.png";
+import officename from "../../Assets/officename.png";
 import Hamburgercompo from './Hamburger';
 
 
@@ -20,9 +21,16 @@ const Navbar = () => {
             src={officiallogo}
             alt="officiallogo"
           />
+          <img onClick={() => NavigateTo("/")}
+            className={Navbar_css.officename}
+            src={officename}
+            alt="officiallogo"/>
         </div>
 
         <div className={Navbar_css.navrouters}>
+          <NavLink className={Navbar_css.navrouterlink} to="/">
+            HOME
+          </NavLink>
           <NavLink className={Navbar_css.navrouterlink} to="/about">
             ABOUT US
           </NavLink>

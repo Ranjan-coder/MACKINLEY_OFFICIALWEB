@@ -21,7 +21,7 @@ const Footer = () => {
   const Links = [
     {
       Title: "HOME",
-      Link: "/home",
+      Link: "/",
     },
     {
       Title: "ABOUT US",

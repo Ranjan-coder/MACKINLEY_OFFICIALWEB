@@ -212,7 +212,7 @@
     overflow: hidden;
     padding: 10px 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    height: 22rem;
+    height: 16em;
 }
 
 .card img {
@@ -283,6 +283,9 @@
         font-size: 10px;
         bottom: 12%;
     }
+    .card {
+        height: 19em;
+    }
 }
 @media only screen and (max-width:500px) {
     .__card{
@@ -291,5 +294,8 @@
     }
     .__demoBtn{
         font-size: 12px;
+    }
+    .card {
+        height: 24em;
     }
 }

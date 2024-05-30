@@ -15,7 +15,8 @@ export default function ProductPage() {
             <img className={discover.__image} src={filterData[0].img} alt="" />
             <h1 className={discover.__cardTitle}>{filterData[0].title}</h1>
             <p className={discover.__cardDescription}>{filterData[0].intro}</p>
-            <h5 className={discover.__cardTitle}>Key Benefits of HRConnect Pro :</h5>
+            <br/>
+            <h5 className={discover.__cardTitle}>Key Benefits of {filterData[0].cat} :</h5>
             {filterData[0].benefits.map((item, index) => {
                 return (
                     <div>
@@ -23,6 +24,7 @@ export default function ProductPage() {
                     </div>
                 )
             })}
+            <br/>
             <h5 className={discover.__cardTitle}>Key Features :</h5>
             {
                 filterData[0].features && <>
@@ -35,6 +37,7 @@ export default function ProductPage() {
                     })}
                 </>
             }
+            <br/>
             <h5 className={discover.__cardTitle}>{filterData[0].bio[0].head}</h5>
             <p className={discover.__cardDescription}>{filterData[0].bio[0].desc}</p>
 

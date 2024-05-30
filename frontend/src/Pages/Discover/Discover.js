@@ -4,6 +4,7 @@ import hrconnectpro from '../../Assets/hrconnectpro.jpg';
 import connectera from '../../Assets/connect.jpg';
 import mediai from '../../Assets/mediAI.jpg';
 import globalGuardian from '../../Assets/globalguardian.png';
+import worldsync from '../../Assets/worldsync.jpeg'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { bucket } from './ProductData';
 import { Link } from 'react-router-dom';
@@ -12,8 +13,8 @@ import serviceitems from '../../Data/ServicePageData'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-// import './styles.css';
 import { Pagination, Navigation } from 'swiper/modules';
+import Modals from './Modals';
 
 const Discover = () => {
   const [data] = useContext(bucket)
@@ -77,7 +78,10 @@ const Discover = () => {
                         <FaArrowRightLong className={discover.__arrowIcon} />
                       </button>
                     </Link>
-                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                    {/* <button className={discover.__demoBtn} onClick={handleShow}>
+                      Ask for a demo
+                    </button> */}
+                    <Modals />
                   </div>
                 </div>
               )
@@ -146,89 +150,27 @@ const Discover = () => {
             })}
         </SwiperSlide>
         <SwiperSlide>
-          Slide 5
+          {data?.filter(item => item.cat === 'WorldSync')
+            .map((item, id) => {
+              return (
+                <div key={id}>
+                  <div className={discover.__card} >
+                    <img className={discover.__cardImg} src={worldsync} alt="" />
+                    <h4 className={discover.__cardTitle}>{item.cat} 🔄️</h4>
+                    <p className={discover.__cardDescription}>Your ultimate solution for seamless attendance tracking and payroll processing across the globe.</p>
+                    <Link to={`/discover/${item.cat}`}>
+                      <button className={discover.__cardBtn}>
+                        <span className={discover.__learnBtn}>Learn More</span>
+                        <FaArrowRightLong className={discover.__arrowIcon} />
+                      </button>
+                    </Link>
+                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                  </div>
+                </div>
+              )
+            })}
         </SwiperSlide>
       </Swiper>
-
-
-      {/* <div className={discover.__container}>
-        {data?.filter(item => item.cat === 'HRConnectPro')
-          .map((item, id) => {
-            return (
-              <div key={id}>
-                <div className={discover.__card} >
-                  <img className={discover.__cardImg} src={hrconnectpro} alt="" />
-                  <h4 className={discover.__cardTitle}>{item.title.slice(0, 14)} 🧑‍💻</h4>
-                  <p className={discover.__cardDescription}>Your comprehensive solution for transforming HR management</p>
-                  <Link to={`/discover/${item.cat}`}>
-                    <button className={discover.__cardBtn}>
-                      <span className={discover.__learnBtn}>Learn More</span>
-                      <FaArrowRightLong className={discover.__arrowIcon} />
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            )
-          })}
-
-        {data?.filter(item => item.cat === 'MediAI')
-          .map((item, id) => {
-            return (
-              <div key={id}>
-                <div className={discover.__card} >
-                  <img className={discover.__cardImg} src={mediai} alt="" />
-                  <h4 className={discover.__cardTitle}>{item.title.slice(0, 14)} 🩺</h4>
-                  <p className={discover.__cardDescription}>An innovative healthcare platform designed to transform the way medical services are delivered.</p>
-                  <Link to={`/discover/${item.cat}`}>
-                    <button className={discover.__cardBtn}>
-                      <span className={discover.__learnBtn}>Learn More</span>
-                      <FaArrowRightLong className={discover.__arrowIcon} />
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            )
-          })}
-
-        {data?.filter(item => item.cat === 'Connect-Era')
-          .map((item, id) => {
-            return (
-              <div key={id}>
-                <div className={discover.__card} >
-                  <img className={discover.__cardImg} src={connectera} alt="" />
-                  <h4 className={discover.__cardTitle}>{item.cat} 💕</h4>
-                  <p className={discover.__cardDescription}>A global community where meaningful relationships flourish.</p>
-                  <Link to={`/discover/${item.cat}`}>
-                    <button className={discover.__cardBtn}>
-                      <span className={discover.__learnBtn}>Learn More</span>
-                      <FaArrowRightLong className={discover.__arrowIcon} />
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            )
-          })}
-
-        {data?.filter(item => item.cat === 'Global-Guardian')
-          .map((item, id) => {
-            return (
-              <div key={id}>
-                <div className={discover.__card} >
-                  <img className={discover.__cardImg} src={globalGuardian} alt="" />
-                  <h4 className={discover.__cardTitle}>{item.cat} 🛡️</h4>
-                  <p className={discover.__cardDescription}>Elevating HR Management to New Heights.</p>
-                  <Link to={`/discover/${item.cat}`}>
-                    <button className={discover.__cardBtn}>
-                      <span className={discover.__learnBtn}>Learn More</span>
-                      <FaArrowRightLong className={discover.__arrowIcon} />
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            )
-          })}
-      </div> */}
-
 
       {/* Service Contents ------------------------------------> */}
 

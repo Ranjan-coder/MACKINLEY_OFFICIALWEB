@@ -28,6 +28,11 @@ const JobApplicationRoute =  require('./Routes/JobApplication')
 app.use('/api',JobApplicationRoute);
 //! Job Application Routes //!
 
+//! Job Application Routes //!
+const ContactUsRoutes =  require('./Routes/ContactUsRoutes')
+app.use('/api',ContactUsRoutes);
+//! Job Application Routes //!
+
 
 require("./Config/Config")
 app.listen(Port, async () => {

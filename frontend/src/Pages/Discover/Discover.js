@@ -78,9 +78,6 @@ const Discover = () => {
                         <FaArrowRightLong className={discover.__arrowIcon} />
                       </button>
                     </Link>
-                    {/* <button className={discover.__demoBtn} onClick={handleShow}>
-                      Ask for a demo
-                    </button> */}
                     <Modals />
                   </div>
                 </div>
@@ -101,7 +98,7 @@ const Discover = () => {
                       <FaArrowRightLong className={discover.__arrowIcon} />
                     </button>
                   </Link>
-                  <button className={discover.__demoBtn}>Ask for a demo</button>
+                  <Modals />
                 </div>
               </div>
             )
@@ -122,7 +119,7 @@ const Discover = () => {
                         <FaArrowRightLong className={discover.__arrowIcon} />
                       </button>
                     </Link>
-                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                    <Modals />
                   </div>
                 </div>
               )
@@ -143,7 +140,7 @@ const Discover = () => {
                         <FaArrowRightLong className={discover.__arrowIcon} />
                       </button>
                     </Link>
-                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                    <Modals />
                   </div>
                 </div>
               )
@@ -164,7 +161,7 @@ const Discover = () => {
                         <FaArrowRightLong className={discover.__arrowIcon} />
                       </button>
                     </Link>
-                    <button className={discover.__demoBtn}>Ask for a demo</button>
+                    <Modals />
                   </div>
                 </div>
               )

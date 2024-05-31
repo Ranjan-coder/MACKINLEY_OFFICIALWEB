@@ -33,6 +33,11 @@ const ContactUsRoutes =  require('./Routes/ContactUsRoutes')
 app.use('/api',ContactUsRoutes);
 //! Job Application Routes //!
 
+//! Job Application Routes //!
+const DemoRoutes =  require('./Routes/DemoRoutes')
+app.use('/api',DemoRoutes);
+//! Job Application Routes //!
+
 
 require("./Config/Config")
 app.listen(Port, async () => {

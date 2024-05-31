@@ -32,10 +32,10 @@ const Contact = () => {
 
     if (errors[name]) {
       setErrors({
-          ...errors,
-          [name]: ''
+        ...errors,
+        [name]: ''
       });
-  }
+    }
   };
 
   const validate = () => {
@@ -143,7 +143,7 @@ const Contact = () => {
               </div>
             </Col>
             <Col xl={3} lg={4} md={12}>
-               <form onSubmit={handleSubmit} noValidate>
+              <form onSubmit={handleSubmit} noValidate>
                 <input
                   type="text"
                   id="name"
@@ -161,7 +161,7 @@ const Contact = () => {
                 <br />
 
                 <PhoneInput
-                 country={'in'}
+                  country={'in'}
                   type="tel"
                   id="phone"
                   value={formData.phone}
@@ -218,21 +218,13 @@ const Contact = () => {
                     value="mediai"
                     className={Contact_style.cntctselect_drop}
                   >
-<<<<<<< HEAD
                     MediAI Connect
-=======
-                    MediAIConnect
->>>>>>> 8eb6bb4a3e804d9113e83b068eedef80e90d36af
                   </option>
                   <option
                     value="globalguardian"
                     className={Contact_style.cntctselect_drop}
                   >
-<<<<<<< HEAD
                     Global Guardian
-=======
-                    GlobalGuardianConnect
->>>>>>> 8eb6bb4a3e804d9113e83b068eedef80e90d36af
                   </option>
                   <option
                     value="WorldSync"
@@ -268,7 +260,7 @@ const Contact = () => {
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
-              </form> 
+              </form>
             </Col>
           </Row>
         </Container>

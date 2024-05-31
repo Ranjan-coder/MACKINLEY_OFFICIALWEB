@@ -26,6 +26,10 @@
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
+#swiperparent{
+  position: sticky;
+  z-index: -1;
+}
 
 .swiper_pannel .container,
 .swiper_pannel_two .container,

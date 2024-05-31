@@ -1,24 +1,23 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import Navbar_style from "../Navbar/Navbar.module.css";
 
 import logo from "../../Assets/officiallogo.png";
-import logoName from "../../Assets/officename.jpg";
+import logoName from "../../Assets/officename.png";
+
 
 function Navebar() {
+  const NavigateTo = useNavigate()
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" id={Navbar_style.navparent}>
       <Container>
-        <Navbar.Brand
-          href="#home"
-          className={Navbar_style.logo_offical_offical}
-        >
-          <div className={Navbar_style.logo_part}>
+        <Navbar.Brand className={Navbar_style.logo_offical_offical} >
+          <div className={Navbar_style.logo_part} onClick={()=>NavigateTo('/')}>
             <div className={Navbar_style.logo_offical}>
-              <img
+              <img 
                 src={logo}
                 alt="logo"
                 className={Navbar_style.logo_offical_main}

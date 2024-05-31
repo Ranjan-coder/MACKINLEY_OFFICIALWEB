@@ -31,7 +31,7 @@ export default function Home() {
         modules={[Autoplay]}
         loop={true}
         speed={1500}
-        className="mySwiper"
+        className="mySwiper" id={Home_css.swiperparent}
       >
         <SwiperSlide>
           <div className={Home_css.swiper_pannel}>

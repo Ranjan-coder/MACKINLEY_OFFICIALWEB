@@ -1,8 +1,9 @@
 import { createContext, useState } from 'react';
-import hrconnectpro from '../../Assets/hrconnectpro.png';
+import hrconnectpro from '../../Assets/hrconnectpro.jpg';
 import connectera from '../../Assets/connect.jpg';
 import mediai from '../../Assets/mediAI.jpg';
 import globalGuardian from '../../Assets/globalguardian.png';
+import worldsync from '../../Assets/worldsync.jpeg'
 
 export const bucket = createContext();
 
@@ -267,6 +268,130 @@ export default function ProductData(props) {
             ],
             caption: "Ready to learn more about how GlobalGuardian can protect your identity and enhance your banking experience? Contact us today to schedule a demo or speak with one of our experts.",
             img: globalGuardian
+        },
+        {
+            id: 5,
+            cat: 'WorldSync',
+            title: "Revolutionize Your Global Attendance and Payroll Management",
+            intro: "WorldSync is your ultimate solution for seamless attendance tracking and payroll processing across the globe. Designed with cutting-edge technology and a user-centric approach, WorldSync simplifies HR operations for businesses of all sizes, ensuring compliance, accuracy, and efficiency.",
+            benefits: [
+                {
+                    key: "Global Compliance",
+                    desc: "Stay ahead of the curve with WorldSync’s automated updates on local labor laws and tax regulations. Our software supports multiple languages and currencies, ensuring smooth operations no matter where your employees are based."
+                },
+                {
+                    key: "Advanced Attendance Tracking",
+                    desc: "With WorldSync, managing attendance is a breeze. Our system integrates biometric authentication, geolocation, and mobile capabilities to ensure accurate tracking and convenience for your workforce."
+                },
+                {
+                    key: "Streamlined Payroll Processing",
+                    desc: "Say goodbye to payroll hassles. WorldSync automates payroll calculations, handles overtime, bonuses, and deductions, and integrates seamlessly with global banking systems for direct deposits. Ensure timely and accurate paychecks every time."
+                },
+                {
+                    key: "Insightful Analytics and Reporting",
+                    desc: "Make informed decisions with our robust analytics and reporting tools. Customize reports to gain real-time insights into workforce productivity, attendance patterns, and payroll expenses. Leverage predictive analytics for better workforce planning and budgeting"
+                },
+                {
+                    key: "Seamless Integrations",
+                    desc: "WorldSync connects effortlessly with popular HR systems, ERPs, and financial software through our open API, providing a unified experience across your business operations."
+                },
+                {
+                    key: "Unmatched Security and Compliance",
+                    desc: "Your data is safe with us. WorldSync employs advanced data encryption, adheres to global data protection regulations, and provides role-based access control to ensure the highest level of security."
+                },
+            ],
+            features: [
+                {
+                    key: "Country-specific Regulations",
+                    feature: "Automatic updates to stay compliant.",
+                },
+                {
+                    key: "Biometric Integration",
+                    feature: "Fingerprint, facial recognition, and iris scans.",
+                },
+                {
+                    key: "Geolocation and Geofencing",
+                    feature: "Ensure accurate clock-ins from approved locations.",
+                },
+                {
+                    key: "Mobile App",
+                    feature: "Clock-in/out, request leave, and view schedules on-the-go.",
+                },
+                {
+                    key: "Automated Payroll Calculations",
+                    feature: "Streamline your payroll process.",
+                },
+                {
+                    key: "Custom Reports and Dashboards",
+                    feature: "Real-time insights and analytics.",
+                },
+                {
+                    key: "Open APi",
+                    feature: "For custom integrations and extended functionality.",
+                },
+                {
+                    key: "Data Encryption and GDPR Compliance",
+                    feature: "Ensuring your data’s security and privacy.",
+                },
+            ],
+            working: [
+                {
+                    title: "User Registration",
+                    caption: "Start by creating your profile with simple and secure registration."
+                },
+                {
+                    title: "Identity Verification",
+                    caption: "Verify your identity using our advanced biometric authentication and document validation."
+                },
+                {
+                    title: "Secure Transactions",
+                    caption: "Perform secure transactions with multi-factor authentication."
+                },
+                {
+                    title: "Compliance Monitoring",
+                    caption: "Ensure regulatory compliance with our real-time monitoring tools."
+                },
+            ],
+            industries: [
+                {
+                    name: "Multinational Corporations",
+                    work: "Simplify complex global operations."
+                },
+                {
+                    name: "Medium to Large Enterprises",
+                    work: "Streamline attendance and payroll across multiple locations"
+                },
+                {
+                    name: "High-Growth Startups",
+                    work: "Scale your business with ease and efficiency."
+                },
+            ],
+            bio: [
+                {
+                    head: "Get Started with WorldSync Today!",
+                    desc: "Experience the future of global attendance and payroll management. Join the growing number of businesses transforming their HR operations with WorldSync. Contact us today to learn more or request a demo."
+                }
+            ],
+            caption: "Ready to learn more about how GlobalGuardian can protect your identity and enhance your banking experience? Contact us today to schedule a demo or speak with one of our experts.",
+            img: worldsync,
+            faq: [
+                {
+                    title: "Q: How does WorldSync handle different country regulations? ",
+                    caption: "A: WorldSync automatically updates local labor laws and tax regulations, ensuring compliance no matter where your employees are located."
+                },
+                {
+                    title: "Q: Can employees use WorldSync on their mobile devices? ",
+                    caption: "A: Yes, WorldSync offers a mobile app that allows employees to clock in/out, request leave, and view their schedules from anywhere."
+                },
+                {
+                    title: "Q: Is my data secure with WorldSync?",
+                    caption: "A: Absolutely. WorldSync uses advanced data encryption, adheres to GDPR, and provides role-based access control to protect your sensitive information."
+                },
+                {
+                    title: "Q: What kind of reports can I generate with WorldSync?",
+                    caption: "A: WorldSync offers customizable reports, including workforce productivity, attendance patterns, and payroll expenses, along with predictive analytics for future planning."
+                },
+            ]
         },
     ])
     return (

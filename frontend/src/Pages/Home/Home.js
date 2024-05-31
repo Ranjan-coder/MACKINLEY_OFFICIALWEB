@@ -1,28 +1,24 @@
 import React from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Home_css from "./Home.module.css";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
-// import required modules
 import { Autoplay } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const NavigateTo = useNavigate();
   return (
     <>
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -31,7 +27,9 @@ export default function Home() {
         modules={[Autoplay]}
         loop={true}
         speed={1500}
-        className="mySwiper" id={Home_css.swiperparent}
+        className="mySwiper"
+        id={Home_css.swiperparent}
+        style={{ zIndex: 1 }}
       >
         <SwiperSlide>
           <div className={Home_css.swiper_pannel}>
@@ -50,7 +48,14 @@ export default function Home() {
                       operations.
                     </div>
 
-                    <button className={Home_css.swiper_pannel_button}>
+                    <button
+                      className={Home_css.swiper_pannel_button}
+                      onClick={() => {
+                        console.log("Navigating to contact page");
+                        NavigateTo("/contact");
+                      }}
+                      style={{ zIndex: 2 }}
+                    >
                       Get Started
                     </button>
                   </div>
@@ -75,7 +80,14 @@ export default function Home() {
                       in the dynamic IT landscape.
                     </div>
 
-                    <button className={Home_css.swiper_pannel_button}>
+                    <button
+                      className={Home_css.swiper_pannel_button}
+                      onClick={() => {
+                        console.log("Navigating to contact page");
+                        NavigateTo("/contact");
+                      }}
+                      style={{ zIndex: 2 }}
+                    >
                       Get Started
                     </button>
                   </div>
@@ -100,7 +112,14 @@ export default function Home() {
                       making us the go-to choice for BFSI technology needs.
                     </div>
 
-                    <button className={Home_css.swiper_pannel_button}>
+                    <button
+                      className={Home_css.swiper_pannel_button}
+                      onClick={() => {
+                        console.log("Navigating to contact page");
+                        NavigateTo("/contact");
+                      }}
+                      style={{ zIndex: 2 }}
+                    >
                       Get Started
                     </button>
                   </div>

@@ -206,7 +206,7 @@ const Contact = () => {
                     value="hrconnectpro"
                     className={Contact_style.cntctselect_drop}
                   >
-                    HRConnect Pro
+                    HRConnectPro
                   </option>
                   <option
                     value="connectera"
@@ -218,19 +218,27 @@ const Contact = () => {
                     value="mediai"
                     className={Contact_style.cntctselect_drop}
                   >
+<<<<<<< HEAD
                     MediAI Connect
+=======
+                    MediAIConnect
+>>>>>>> 8eb6bb4a3e804d9113e83b068eedef80e90d36af
                   </option>
                   <option
                     value="globalguardian"
                     className={Contact_style.cntctselect_drop}
                   >
+<<<<<<< HEAD
                     Global Guardian
+=======
+                    GlobalGuardianConnect
+>>>>>>> 8eb6bb4a3e804d9113e83b068eedef80e90d36af
                   </option>
                   <option
-                    value="about"
+                    value="WorldSync"
                     className={Contact_style.cntctselect_drop}
                   >
-                    OTHER
+                    WorldSync!
                   </option>
                 </select>
                 <br />

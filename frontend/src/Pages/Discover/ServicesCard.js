@@ -39,7 +39,7 @@ const Service = (props) => {
                                     <div className={discover.cardBody}>
                                         <h5 className={discover.cardtitle}>{value.head}</h5>
                                         <p className={discover.cardText}>{truncateText(value.para, maxLength)}</p>
-                                        <button className={discover.demoButton}>Book A Demo</button>
+                                        {/* <button className={discover.demoButton}>Book A Demo</button> */}
                                     </div>
                                 </div>
 

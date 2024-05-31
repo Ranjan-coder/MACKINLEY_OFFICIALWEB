@@ -14,8 +14,10 @@ import Col from "react-bootstrap/Col";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const NavigateTo = useNavigate()
   return (
     <>
       <Swiper
@@ -50,7 +52,7 @@ export default function Home() {
                       operations.
                     </div>
 
-                    <button className={Home_css.swiper_pannel_button}>
+                    <button className={Home_css.swiper_pannel_button} onClick={()=>NavigateTo('/contact')}>
                       Get Started
                     </button>
                   </div>
@@ -75,7 +77,7 @@ export default function Home() {
                       in the dynamic IT landscape.
                     </div>
 
-                    <button className={Home_css.swiper_pannel_button}>
+                    <button className={Home_css.swiper_pannel_button} onClick={()=>NavigateTo('/contact')}>
                       Get Started
                     </button>
                   </div>
@@ -100,7 +102,7 @@ export default function Home() {
                       making us the go-to choice for BFSI technology needs.
                     </div>
 
-                    <button className={Home_css.swiper_pannel_button}>
+                    <button className={Home_css.swiper_pannel_button} onClick={()=>NavigateTo('/contact')}>
                       Get Started
                     </button>
                   </div>

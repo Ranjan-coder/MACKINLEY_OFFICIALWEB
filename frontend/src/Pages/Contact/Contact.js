@@ -227,7 +227,7 @@ const Contact = () => {
                     GlobalGuardianConnect
                   </option>
                   <option
-                    value="WorldSync!"
+                    value="WorldSync"
                     className={Contact_style.cntctselect_drop}
                   >
                     WorldSync!

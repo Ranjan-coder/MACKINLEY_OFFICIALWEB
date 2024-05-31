@@ -8,6 +8,11 @@
     font-family: "Merriweather", serif;
 }
 
+.inputElement{
+    width: 300px;
+    margin-right: 20px;
+}
+
 .__discoverPage {
     margin: 3em;
 }

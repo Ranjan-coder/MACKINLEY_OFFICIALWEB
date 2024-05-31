@@ -218,13 +218,13 @@ const Contact = () => {
                     value="mediai"
                     className={Contact_style.cntctselect_drop}
                   >
-                    Medi AI Connect
+                    MediAI Connect
                   </option>
                   <option
                     value="globalguardian"
                     className={Contact_style.cntctselect_drop}
                   >
-                    Global Guardian Connect
+                    Global Guardian
                   </option>
                   <option
                     value="about"

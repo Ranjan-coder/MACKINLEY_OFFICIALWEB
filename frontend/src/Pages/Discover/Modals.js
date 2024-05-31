@@ -1,20 +1,14 @@
 import { useState } from 'react';
 import discover from './Discover.module.css'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import { Button, Form } from 'react-bootstrap';
 import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
 import axios from 'axios';
 
 
 export default function Modals() {
-  const [show, setShow] = useState(false);
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSending, setIsSending] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +21,6 @@ export default function Modals() {
 
       if (response.status === 200) {
         toast.success('You request has been sent!');
-        setShow(false);
         setEmail('');
         setMessage('');
       } else {
@@ -42,49 +35,35 @@ export default function Modals() {
   };
 
   return (
-    <>
-    <div><Toaster/></div>
-      <button className={discover.__demoBtn} onClick={handleShow}>
-        Ask for a demo
-      </button>
+    <div className={discover.__modalPage}>
+      <h3 className={discover.__modalTitle}>Discuss Business Needs or Ask For a Demo. We Would Love to Talk.</h3>
+      <Form className={discover.__modalForm} onSubmit={handleSubmit}>
+        <div className={discover.__modalContainer}>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control type="name" placeholder="John Doe" onChange={(e) => setEmail(e.target.value)} value={email} autoFocus />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Mobile Number</Form.Label>
+            <Form.Control type="number" placeholder="+1 9876543210" onChange={(e) => setEmail(e.target.value)} value={email} autoFocus />
+          </Form.Group>
+        </div>
 
-      <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Discuss business needs or ask for a demo. We would love to hear.</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label>Enter message</Form.Label>
-              <Form.Control as="textarea" rows={3} 
-              onChange={(e) => setMessage(e.target.value)}
-              value={message}
-              />
-            </Form.Group>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" type="submit" disabled={isSending}>
-                {isSending ? 'Requesting...' : 'Request'}
-          </Button>
-        </Modal.Footer>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </>
+        <div className={discover.__modalContainer}>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Business Email</Form.Label>
+            <Form.Control type="email" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)} value={email} autoFocus />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Company Name</Form.Label>
+            <Form.Control type="name" placeholder='ABC Enterprise' onChange={(e) => setMessage(e.target.value)} value={message} />
+          </Form.Group>
+        </div>
+
+        <Button className={discover.__modalBtn} variant="primary" type="submit" disabled={isSending}>
+          {isSending ? 'Requesting...' : 'Request'}
+        </Button>
+      </Form>
+    </div>
   )
 }

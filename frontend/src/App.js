@@ -2,12 +2,13 @@ import "./App.css";
 import Routers from "./Router/Routers";
 import Navebar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
+      <Toaster />
       <Navebar />
-
       <Routers />
       <Footer />
     </>

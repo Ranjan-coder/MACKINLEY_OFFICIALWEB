@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import discover from './Discover.module.css'
 import hrconnectpro from '../../Assets/hrconnectpro.jpg';
 import connectera from '../../Assets/connect.jpg';
-import mediai from '../../Assets/mediAI.jpg';
+import mediAI from '../../Assets/mediAI.png';
 import globalGuardian from '../../Assets/globalguardian.png';
 import worldsync from '../../Assets/worldsync.jpeg'
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -94,7 +94,7 @@ const Discover = () => {
               return (
                 <div key={id}>
                   <div className={discover.__card} >
-                    <img className={discover.__cardImg} src={mediai} alt="" />
+                    <img className={discover.__cardImg} src={mediAI} alt="" />
                     <h4 className={discover.__cardTitle}>{item.title.slice(0, 14)} 🩺</h4>
                     <p className={discover.__cardDescription}>An innovative healthcare platform designed to transform the way medical services are delivered.</p>
                     <Link to={`/discover/${item.cat}`}>
@@ -186,7 +186,8 @@ const Discover = () => {
 
       <div className={discover.ServicePageContainer}>
         <ServiceCard head="Our Best Services" />
-        <p className={discover.ServiceDescription}>At Mackinlay, we are dedicated to providing top-notch UI/UX design and IT services to help your business thrive in the digital world. Our comprehensive service offerings are designed to meet your unique needs and drive your success.
+        <p className={discover.ServiceDescription}>
+          At Mackinlay, we are dedicated to providing top-notch UI/UX design and IT services to help your business thrive in the digital world. Our comprehensive service offerings are designed to meet your unique needs and drive your success.
         </p>
         {ServiceItems.map((chunk, index) => (
           <div key={index}>

@@ -50,7 +50,7 @@ export default function Modals() {
 
   return (
     <div className={discover.__modalPage}>
-      <h3 className={discover.__modalTitle}>Discuss Business Needs or Ask For a Demo. We Would Love to Talk.</h3>
+      <h2 className={discover.__modalTitle}>Discuss Business Needs or Ask For a Demo. We Would Love to Talk.</h2>
       <Form className={discover.__modalForm} onSubmit={handleSubmit}>
         <div className={discover.__modalContainer}>
           <Form.Group className="mb-3" controlId="formFullName">

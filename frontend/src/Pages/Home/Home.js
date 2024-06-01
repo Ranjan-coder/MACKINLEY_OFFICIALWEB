@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Home_css from "./Home.module.css";
 import Container from "react-bootstrap/Container";
@@ -8,6 +9,9 @@ import Col from "react-bootstrap/Col";
 import Lottie from "lottie-react";
 
 import animationData from "../../Assets/customer.json";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import partner from "../../Assets/partner.jpeg";
 import digital from "../../Assets/digital.jpeg";
@@ -22,6 +26,10 @@ export default function Home() {
     navigate("/contact");
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section>
       <div className={Home_css.main_page}>
@@ -30,15 +38,25 @@ export default function Home() {
             <Row className="justify-content-center">
               <Col xxl={6}>
                 <div className={Home_css.main_page_desc}>
-                  <div className={Home_css.main_page_title}>
+                  <div
+                    className={Home_css.main_page_title}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1500"
+                  >
                     Welcome to Mackinlay
                   </div>
-                  <div className={Home_css.main_page_cnt}>
+                  <div
+                    className={Home_css.main_page_cnt}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1500"
+                  >
                     Your Partner in Digital Innovation
                   </div>
                   <button
                     className={Home_css.main_cntact_us}
                     onClick={navigateToContact}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1500"
                   >
                     Contact Us
                   </button>
@@ -49,17 +67,35 @@ export default function Home() {
         </div>
 
         <div className={Home_css.about_us_section}>
-          <div className={Home_css.about_us_section_title}>ABOUT MACKINLAY</div>
+          <div
+            className={Home_css.about_us_section_title}
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+          >
+            ABOUT MACKINLAY
+          </div>
           <Container>
-            <div className={Home_css.second_part}>
+            <div
+              className={Home_css.second_part}
+              data-aos="zoom-in-up"
+              data-aos-duration="1500"
+            >
               <Row className="align-items-center">
                 <Col xl={6} md={12}>
                   <div className={Home_css.about_us}>
                     <div className={Home_css.about_us_one}>
-                      <div className={Home_css.about_us_title}>
+                      <div
+                        className={Home_css.about_us_title}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         Your Partner in Digital Innovation
                       </div>
-                      <div className={Home_css.about_us_cnt}>
+                      <div
+                        className={Home_css.about_us_cnt}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         At Mackinlay, we're not just an IT firm; we're
                         visionaries in digital transformation. Since our
                         inception in 2021, we have swiftly become leaders in the
@@ -71,11 +107,23 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className={Home_css.about_us_two}>
-                      <div className={Home_css.about_us_title}>
+                    <div
+                      className={Home_css.about_us_two}
+                      data-aos="zoom-in-up"
+                      data-aos-duration="1500"
+                    >
+                      <div
+                        className={Home_css.about_us_title}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         Embrace Innovation with Mackinlay
                       </div>
-                      <div className={Home_css.about_us_cnt}>
+                      <div
+                        className={Home_css.about_us_cnt}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         Our experienced team excels in both HR Tech and BFSI. We
                         are committed to delivering cutting-edge solutions that
                         enhance efficiency and drive excellence in business
@@ -85,7 +133,11 @@ export default function Home() {
                   </div>
                 </Col>
                 <Col xl={6} md={12}>
-                  <div className={Home_css.about_us_image}>
+                  <div
+                    className={Home_css.about_us_image}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1500"
+                  >
                     <img
                       src={partner}
                       alt="partner"
@@ -95,10 +147,18 @@ export default function Home() {
                 </Col>
               </Row>
             </div>
-            <div className={Home_css.second_part}>
+            <div
+              className={Home_css.second_part}
+              data-aos="zoom-in-up"
+              data-aos-duration="1500"
+            >
               <Row className="align-items-center">
                 <Col xl={6} md={12}>
-                  <div className={Home_css.about_us_image}>
+                  <div
+                    className={Home_css.about_us_image}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1500"
+                  >
                     <img
                       src={digital}
                       alt="digital"
@@ -107,12 +167,24 @@ export default function Home() {
                   </div>
                 </Col>
                 <Col xl={6} md={12}>
-                  <div className={Home_css.about_us}>
+                  <div
+                    className={Home_css.about_us}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1500"
+                  >
                     <div className={Home_css.about_us_one}>
-                      <div className={Home_css.about_us_title}>
+                      <div
+                        className={Home_css.about_us_title}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         Digital Transformation
                       </div>
-                      <div className={Home_css.about_us_cnt}>
+                      <div
+                        className={Home_css.about_us_cnt}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         In today’s dynamic digital landscape, staying ahead is
                         crucial. At Mackinlay, we offer comprehensive digital
                         transformation services to help businesses adapt and
@@ -124,29 +196,49 @@ export default function Home() {
                     </div>
 
                     <div className={Home_css.about_us_two}>
-                      <div className={Home_css.about_us_title}>
+                      <div
+                        className={Home_css.about_us_title}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         Custom Solutions for BFSI
                       </div>
-                      <div className={Home_css.about_us_cnt}>
+                      <div
+                        className={Home_css.about_us_cnt}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         We understand the unique challenges and opportunities
                         within the BFSI sector. Our tailored solutions address
                         specific business needs, including:
                         <ul>
-                          <li className={Home_css.about_us_list}>
+                          <li
+                            className={Home_css.about_us_list}
+                            data-aos="zoom-in-up"
+                            data-aos-duration="1500"
+                          >
                             <span className={Home_css.about_us_bold}>
                               Core Banking Solutions:
                             </span>{" "}
                             Enhance operations with advanced banking software
                             that boosts efficiency and cuts costs.
                           </li>
-                          <li className={Home_css.about_us_list}>
+                          <li
+                            className={Home_css.about_us_list}
+                            data-aos="zoom-in-up"
+                            data-aos-duration="1500"
+                          >
                             <span className={Home_css.about_us_bold}>
                               Risk Management:
                             </span>
                             Implement strong risk management frameworks to
                             protect assets and comply with regulations.
                           </li>
-                          <li className={Home_css.about_us_list}>
+                          <li
+                            className={Home_css.about_us_list}
+                            data-aos="zoom-in-up"
+                            data-aos-duration="1500"
+                          >
                             <span className={Home_css.about_us_bold}>
                               Customer Relationship Management (CRM):{" "}
                             </span>
@@ -161,33 +253,57 @@ export default function Home() {
               </Row>
             </div>
 
-            <div className={Home_css.second_part}>
+            <div
+              className={Home_css.second_part}
+              data-aos="zoom-in-up"
+              data-aos-duration="1500"
+            >
               <Row className="align-items-center">
                 <Col xl={6} md={12}>
                   <div className={Home_css.about_us}>
                     <div className={Home_css.about_us_two}>
-                      <div className={Home_css.about_us_title}>
+                      <div
+                        className={Home_css.about_us_title}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         HR Tech Innovations
                       </div>
-                      <div className={Home_css.about_us_cnt}>
+                      <div
+                        className={Home_css.about_us_cnt}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
+                      >
                         Our expertise extends to transforming human resources
                         through technology. Our HR Tech solutions include:
                         <ul>
-                          <li className={Home_css.about_us_list}>
+                          <li
+                            className={Home_css.about_us_list}
+                            data-aos="zoom-in-up"
+                            data-aos-duration="1500"
+                          >
                             <span className={Home_css.about_us_bold}>
                               Talent Management Systems:
                             </span>{" "}
                             Streamline recruitment, onboarding, and employee
                             development.
                           </li>
-                          <li className={Home_css.about_us_list}>
+                          <li
+                            className={Home_css.about_us_list}
+                            data-aos="zoom-in-up"
+                            data-aos-duration="1500"
+                          >
                             <span className={Home_css.about_us_bold}>
                               Payroll and Benefits Administration:
                             </span>
                             Ensure precise and efficient payroll processing and
                             benefits management.
                           </li>
-                          <li className={Home_css.about_us_list}>
+                          <li
+                            className={Home_css.about_us_list}
+                            data-aos="zoom-in-up"
+                            data-aos-duration="1500"
+                          >
                             <span className={Home_css.about_us_bold}>
                               Employee Engagement Platforms:
                             </span>
@@ -201,7 +317,11 @@ export default function Home() {
                 </Col>
 
                 <Col xl={6} md={12}>
-                  <div className={Home_css.about_us_image}>
+                  <div
+                    className={Home_css.about_us_image}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1500"
+                  >
                     <img
                       src={hr}
                       alt="hr"
@@ -214,7 +334,11 @@ export default function Home() {
           </Container>
         </div>
         <div className={Home_css.why_choose_us}>
-          <div className={Home_css.why_choose_us_title}>
+          <div
+            className={Home_css.why_choose_us_title}
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+          >
             Why Choose Mackinlay ?
           </div>
           <Container>
@@ -227,12 +351,22 @@ export default function Home() {
                         src={value.Image}
                         alt=""
                         className={Home_css.why_choose_logo_image}
+                        data-aos="zoom-in-up"
+                        data-aos-duration="1500"
                       />
                     </div>
-                    <div className={Home_css.why_choose_box_title}>
+                    <div
+                      className={Home_css.why_choose_box_title}
+                      data-aos="zoom-in-up"
+                      data-aos-duration="1500"
+                    >
                       {value.Title}
                     </div>
-                    <div className={Home_css.why_choose_box_cnt}>
+                    <div
+                      className={Home_css.why_choose_box_cnt}
+                      data-aos="zoom-in-up"
+                      data-aos-duration="1500"
+                    >
                       {" "}
                       {value.Content}
                     </div>
@@ -244,16 +378,30 @@ export default function Home() {
         </div>
 
         <div className={Home_css.contact_asap}>
-          <div className={Home_css.contact_asap_heading}>How can we help ?</div>
+          <div
+            className={Home_css.contact_asap_heading}
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+          >
+            How can we help ?
+          </div>
           <Container>
             <Row className={`align-items-center ${Home_css.reverse_option}`}>
               <Col xl={6} lg={6} md={6}>
-                <div className={Home_css.contact_asap_title}>
+                <div
+                  className={Home_css.contact_asap_title}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1500"
+                >
                   Contact us today to learn how we can assist you in navigating
                   the digital world and driving your business forward.
                 </div>
 
-                <div className={Home_css.contact_asap_title}>
+                <div
+                  className={Home_css.contact_asap_title}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1500"
+                >
                   For more information or to schedule a consultation, please
                   visit our website at{" "}
                   <span className={Home_css.about_us_bold}>
@@ -269,6 +417,8 @@ export default function Home() {
                 <button
                   className={Home_css.main_cntact_us}
                   onClick={navigateToContact}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1500"
                 >
                   Contact Us
                 </button>
@@ -279,6 +429,8 @@ export default function Home() {
                   animationData={animationData}
                   loop={true}
                   className={Home_css.main_cntact_us_ani}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1500"
                 />
               </Col>
             </Row>

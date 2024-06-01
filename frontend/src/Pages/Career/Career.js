@@ -256,14 +256,11 @@ const Career = () => {
         We are proud to announce our tree-planting initiative, reflecting our dedication to sustainability and environmental stewardship. Join us in creating a positive impact on the planet while striving for excellence in all aspects of our business.
       </p>
 
-
-
-
-
       {
         Isloading && <LogoLoader />
       }
       <div className={CareerStyle.career_container}>
+        <h5>Find your career opportunities :</h5>
         <div className="container">
           <div className="row">
             {jobs.map((job) => (

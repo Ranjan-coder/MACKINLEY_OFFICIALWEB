@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react';
 import hrconnectpro from '../../Assets/hrconnectpro.jpg';
 import connectera from '../../Assets/connect.jpg';
-import mediai from '../../Assets/mediAI.jpg';
+import mediAI from '../../Assets/mediAI.png';
 import globalGuardian from '../../Assets/globalguardian.png';
 import worldsync from '../../Assets/worldsync.jpeg'
 
@@ -130,7 +130,7 @@ export default function ProductData(props) {
                     desc: "MediAI Connect is more than just a product; it's a revolution in healthcare technology. As we prepare for our global launch, we invite you to join us on this journey to enhance healthcare delivery and improve patient outcomes worldwide."
                 }
             ],
-            img: mediai
+            img: mediAI
         },
         {
             id: 3,

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home/Home";
@@ -8,26 +7,13 @@ import Career from "../Pages/Career/Career";
 import Contact from "../Pages/Contact/Contact";
 import ProductData from "../Pages/Discover/ProductData";
 import ProductPage from "../Pages/Discover/ProductPage";
-import ScrollToTop from "./scroll";
-
-import React from 'react'
-import { Route,Routes } from 'react-router-dom';
-import Home from '../Pages/Home/Home';
-import About from '../Pages/Aboutus/About';
-import Discover from '../Pages/Discover/Discover';
-import Career from '../Pages/Career/Career';
-import Contact from '../Pages/Contact/Contact';
-import ProductData from '../Pages/Discover/ProductData';
-import ProductPage from '../Pages/Discover/ProductPage'
-import  Modals  from '../Pages/Discover/Modals';
-
+import ScrollEverPage from "./scroll";
 
 const Routers = () => {
   return (
     <>
       <ProductData>
-
-        <ScrollToTop />
+        <ScrollEverPage />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,17 +22,6 @@ const Routers = () => {
           <Route path="/career" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/discover' element={<Discover/>}/>
-        <Route path='/discover/:id' element={<ProductPage/>}/>
-        <Route path='/career' element={<Career/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/ask-demo' element={<Modals/>}/>
-      </Routes>
-
       </ProductData>
     </>
   );

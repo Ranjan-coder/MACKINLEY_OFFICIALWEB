@@ -134,7 +134,7 @@ export default function ProductData(props) {
         },
         {
             id: 3,
-            cat: 'ConnectEra',
+            cat: 'Connect-Era',
             title: "Welcome to ConnectEra: Where Connections Blossom Across Generations",
             intro: "ConnectEra is more than just a social platform—it's a global community where meaningful relationships flourish. Whether you're seeking friendship, love, or personal growth, ConnectEra provides the perfect space to connect with like-minded individuals from around the world.",
             benefits: [
@@ -181,7 +181,7 @@ export default function ProductData(props) {
         },
         {
             id: 4,
-            cat: 'Global Guardian',
+            cat: 'Global-Guardian',
             title: "Welcome to GlobalGuardian: Your Ultimate Digital Identity and Authentication Solution",
             intro: "GlobalGuardian is a cutting-edge digital identity and authentication platform designed to provide unparalleled security and convenience for global banking and financial services. Our mission is to protect your identity and ensure seamless access to financial services anywhere in the world.",
             benefits: [

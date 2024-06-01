@@ -32,10 +32,10 @@ const Contact = () => {
 
     if (errors[name]) {
       setErrors({
-        ...errors,
-        [name]: ''
+          ...errors,
+          [name]: ''
       });
-    }
+  }
   };
 
   const validate = () => {
@@ -143,7 +143,7 @@ const Contact = () => {
               </div>
             </Col>
             <Col xl={3} lg={4} md={12}>
-              <form onSubmit={handleSubmit} noValidate>
+               <form onSubmit={handleSubmit} noValidate>
                 <input
                   type="text"
                   id="name"
@@ -161,7 +161,7 @@ const Contact = () => {
                 <br />
 
                 <PhoneInput
-                  country={'in'}
+                 country={'in'}
                   type="tel"
                   id="phone"
                   value={formData.phone}
@@ -206,7 +206,7 @@ const Contact = () => {
                     value="hrconnectpro"
                     className={Contact_style.cntctselect_drop}
                   >
-                    HRConnectPro
+                    HRConnect Pro
                   </option>
                   <option
                     value="connectera"
@@ -218,19 +218,19 @@ const Contact = () => {
                     value="mediai"
                     className={Contact_style.cntctselect_drop}
                   >
-                    MediAI Connect
+                    Medi AI Connect
                   </option>
                   <option
                     value="globalguardian"
                     className={Contact_style.cntctselect_drop}
                   >
-                    Global Guardian
+                    Global Guardian Connect
                   </option>
                   <option
-                    value="WorldSync"
+                    value="about"
                     className={Contact_style.cntctselect_drop}
                   >
-                    WorldSync!
+                    OTHER
                   </option>
                 </select>
                 <br />
@@ -260,7 +260,7 @@ const Contact = () => {
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
-              </form>
+              </form> 
             </Col>
           </Row>
         </Container>

@@ -1,41 +1,34 @@
 import { useState } from 'react';
-import discover from './Discover.module.css';
-import { Button, Form } from 'react-bootstrap';
+import discover from './Discover.module.css'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import axios from 'axios';
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+
 
 export default function Modals() {
-  const [fullName, setFullName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [show, setShow] = useState(false);
   const [email, setEmail] = useState('');
-  const [companyName, setCompanyName] = useState('');
   const [message, setMessage] = useState('');
   const [isSending, setIsSending] = useState(false);
-
-  const handlePhoneChange = (value) => {
-    setPhoneNumber(value);
-  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
     try {
       const response = await axios.post('http://localhost:5995/api/demo-email', {
-        fullName,
-        phoneNumber,
         email,
-        companyName,
         message
       });
 
       if (response.status === 200) {
-        toast.success('Your request has been sent!');
-        setFullName('');
-        setPhoneNumber('');
+        toast.success('You request has been sent!');
+        setShow(false);
         setEmail('');
-        setCompanyName('');
         setMessage('');
       } else {
         toast.error('Failed to send request.');
@@ -49,80 +42,49 @@ export default function Modals() {
   };
 
   return (
-    <div className={discover.__modalPage}>
-      <h3 className={discover.__modalTitle}>Discuss Business Needs or Ask For a Demo. We Would Love to Talk.</h3>
-      <Form className={discover.__modalForm} onSubmit={handleSubmit}>
-        <div className={discover.__modalContainer}>
-          <Form.Group className="mb-3" controlId="formFullName">
-            <Form.Label>Full Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="John Doe"
-              onChange={(e) => setFullName(e.target.value)}
-              value={fullName}
-              required
-              autoFocus
-              className={discover.inputElement}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formPhoneNumber">
-            <Form.Label>Mobile Number</Form.Label>
-            <PhoneInput
-              country={'in'}
-              type="tel"
-              id="phoneNumber"
-              placeholder="phone Number"
-              onChange={handlePhoneChange}
-              value={phoneNumber}
-              required
-              inputProps={{
-                name: 'phoneNumber',
-                required: true,
-              }}
-            />
-          </Form.Group>
-        </div>
+    <>
+    <div><Toaster/></div>
+      <button className={discover.__demoBtn} onClick={handleShow}>
+        Ask for a demo
+      </button>
 
-        <div className={discover.__modalContainer}>
-          <Form.Group className="mb-3" controlId="formBusinessEmail">
-            <Form.Label>Business Email</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="name@example.com"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              required
-              className={discover.inputElement}
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formCompanyName">
-            <Form.Label>Company Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="ABC Enterprise"
-              onChange={(e) => setCompanyName(e.target.value)}
-              value={companyName}
-              required
-              className={discover.inputElement}
-            />
-          </Form.Group>
-        </div>
-        <Form.Group className="mb-3" controlId="formMessage">
-          <Form.Label>Enter Message</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={3}
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-            required
-            className={discover.inputElement}
-          />
-        </Form.Group>
-
-        <Button className={discover.__modalBtn} variant="primary" type="submit" disabled={isSending}>
-          {isSending ? 'Requesting Demo...' : 'Request Demo'}
-        </Button>
-      </Form>
-    </div>
-  );
+      <Modal show={show} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Discuss business needs or ask for a demo. We would love to hear.</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Enter message</Form.Label>
+              <Form.Control as="textarea" rows={3} 
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
+              />
+            </Form.Group>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" type="submit" disabled={isSending}>
+                {isSending ? 'Requesting...' : 'Request'}
+          </Button>
+        </Modal.Footer>
+          </Form>
+        </Modal.Body>
+      </Modal>
+    </>
+  )
 }

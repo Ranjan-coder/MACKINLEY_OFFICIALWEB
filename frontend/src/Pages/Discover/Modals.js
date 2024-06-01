@@ -112,6 +112,7 @@ export default function Modals() {
           <Form.Control
             as="textarea"
             rows={3}
+            placeholder='Type your message...'
             onChange={(e) => setMessage(e.target.value)}
             value={message}
             required

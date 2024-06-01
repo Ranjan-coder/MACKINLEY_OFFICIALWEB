@@ -45,7 +45,7 @@ const Discover = () => {
         breakpoints={{
           375: {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 2,
           },
           425: {
             slidesPerView: 1,
@@ -53,15 +53,15 @@ const Discover = () => {
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 40,
+            spaceBetween: 20,
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 50,
+            spaceBetween: 20,
           },
           1440: {
             slidesPerView: 5,
-            spaceBetween: 280,
+            spaceBetween: 20,
           },
         }}
       >
@@ -142,7 +142,7 @@ const Discover = () => {
                   <div className={discover.__card} >
                     <img className={discover.__cardImg} src={globalGuardian} alt="" />
                     <h4 className={discover.__cardTitle}>{item.cat} 🛡️</h4>
-                    <p className={discover.__cardDescription}>Elevating HR Management to New Heights.</p>
+                    <p className={discover.__cardDescription}>Your Ultimate Digital Identity and Authentication Solution.</p>
                     <Link to={`/discover/${item.cat}`}>
                       <button className={discover.__cardBtn}>
                         <span className={discover.__learnBtn}>Learn More</span>

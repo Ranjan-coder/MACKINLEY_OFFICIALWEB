@@ -57,3 +57,17 @@
   display: flex;
   align-items: flex-end;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .nav_flex_section {
+    gap: 10px;
+  }
+
+  .nav_flex_home,
+  .nav_flex_about,
+  .nav_flex_discover,
+  .nav_flex_career,
+  .nav_flex_contact {
+    font-size: 12px !important;
+  }
+}

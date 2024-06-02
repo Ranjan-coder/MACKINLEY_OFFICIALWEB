@@ -36,11 +36,20 @@
   background-color: #fff !important;
   position: sticky;
   top: 0px;
-  z-index: 1;
+  z-index: 3;
   box-shadow: 0px 0px 9px rgb(176, 153, 234);
 }
 .logo_part {
   cursor: pointer;
   display: flex;
   align-items: center;
+}
+.logo_offical_name {
+  /* width: 40%; */
+  height: 50px;
+  object-fit: contain;
+}
+.logo_offical {
+  display: flex;
+  align-items: flex-end;
 }

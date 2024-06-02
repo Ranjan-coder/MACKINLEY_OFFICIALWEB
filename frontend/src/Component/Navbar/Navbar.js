@@ -7,7 +7,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Navbar_style from "../Navbar/Navbar.module.css";
 
 import logo from "../../Assets/officiallogo.png";
-import logoName from "../../Assets/officename.png";
+// import logoName from "../../Assets/officename.png";
 
 function Navebar() {
   const [activeLink, setActiveLink] = useState("/");
@@ -36,11 +36,6 @@ function Navebar() {
                 src={logo}
                 alt="logo"
                 className={Navbar_style.logo_offical_main}
-              />
-              <img
-                src={logoName}
-                alt="logoName"
-                className={Navbar_style.logo_offical_name}
               />
             </div>
           </div>

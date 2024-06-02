@@ -28,14 +28,10 @@
   border-radius: 3px;
 }
 .logo_offical_main {
-  /* width: 20%; */
   height: 51px;
   object-fit: contain;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
-/* .logo_offical_offical {
-  width: 30%;
-} */
 #navparent {
   background-color: #fff !important;
   position: sticky;
@@ -47,13 +43,4 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-}
-.logo_offical_name {
-  /* width: 40%; */
-  height: 50px;
-  object-fit: contain;
-}
-.logo_offical {
-  display: flex;
-  align-items: flex-end;
 }

@@ -285,33 +285,34 @@ label {
     }
 }
 
-@media only screen and (max-width:780px) {}
-
-.__card {
-    height: 330px;
-    font-size: 12px;
+@media only screen and (max-width:780px) {
+    .__card {
+        height: 330px;
+        font-size: 12px;
+    }
+    
+    .__cardImg {
+        height: 150px;
+    }
+    
+    .__cardTitle {
+        font-size: 16px;
+    }
+    
+    .__cardBtn {
+        left: -75px;
+    }
+    
+    .__demoBtn {
+        font-size: 13px;
+        bottom: 12%;
+    }
+    
+    .card {
+        width: 300px;
+    }
 }
 
-.__cardImg {
-    height: 150px;
-}
-
-.__cardTitle {
-    font-size: 16px;
-}
-
-.__cardBtn {
-    left: -75px;
-}
-
-.__demoBtn {
-    font-size: 13px;
-    bottom: 12%;
-}
-
-.card {
-    width: 300px;
-}
 
 @media only screen and (max-width:500px) {
     .__demoBtn {

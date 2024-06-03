@@ -16,7 +16,7 @@ import { TbBrandFacebook } from "react-icons/tb";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { BsInstagram } from "react-icons/bs";
 import { FaWhatsapp } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const Links = [
@@ -119,7 +119,7 @@ const Footer = () => {
                 <div className={Footer_css.quick_links_underline}></div>
                 <div className={Footer_css.quick_links_space}>
                   {Links.map((value, index) => (
-                    <NavLink
+                    <Link
                       to={value.Link}
                       key={index}
                       className={Footer_css.quick_link_anchor}
@@ -132,7 +132,7 @@ const Footer = () => {
                           {value.Title}
                         </div>
                       </div>
-                    </NavLink>
+                    </Link>
                   ))}
                 </div>
               </div>

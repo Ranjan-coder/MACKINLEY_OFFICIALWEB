@@ -28,14 +28,10 @@
   border-radius: 3px;
 }
 .logo_offical_main {
-  /* width: 20%; */
   height: 51px;
   object-fit: contain;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
-/* .logo_offical_offical {
-  width: 30%;
-} */
 #navparent {
   background-color: #fff !important;
   position: sticky;

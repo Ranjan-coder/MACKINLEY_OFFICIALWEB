@@ -1,4 +1,79 @@
-.career_container{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+/* Career Page --------------------------- */
+.__careerPage {
+    margin: 3em;
+    overflow: hidden;
+}
+
+.__headerText {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 100;
+    padding-bottom: 10px;
+    background: linear-gradient(to top, #09203f 0%, #537895 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.__headerDesc {
+    margin: .5em 0;
+    font-size: 16px;
+}
+
+.__section {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    background: rgb(249, 249, 237);
+    padding: 1em 2em;
+}
+
+.__cultureImg,.__commitmentImg,.__corporateImg,.__profDevImg,.__globalTeamImg {
+    width: 100%;
+    height: 56vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.__corporateImg{
+    height: 220px;
+}
+.__commitmentImg{
+   height: 200px;
+}
+.__profDevImg{
+    height: 250px;
+}
+.__globalTeamImg{
+    height: 200px;
+}
+
+.__careerDesc {
+    margin: 2em auto;
+    padding: 1em 2em;
+    background: rgb(249, 249, 237);
+}
+
+.__careerDesc h5,
+.career_container h5 {
+    font-weight: 600;
+}
+
+span {
+    font-weight: 600;
+}
+
+ol li,
+ul li {
+    line-height: 2;
+}
+
+.career_container {
     padding-top: 20px;
 }
 
@@ -13,13 +88,39 @@
     width: 100px;
     height: 100px;
     margin-bottom: 10px;
+    object-fit: cover;
 }
 
-@media screen and (min-width:330px) and (max-width:950px){
-    .career_container{
+.card {
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+@media screen and (min-width:330px) and (max-width:950px) {
+    .__careerPage {
+        margin: 2em 1em;
+    }
+
+    .__section {
+        flex-direction: column;
+    }
+    .__cultureImg{
+        object-fit: cover;
+    }
+
+    .__headerDesc {
+        text-align: justify;
+    }
+
+    .career_container {
         padding-top: 20px;
         position: relative;
-        left: 11vw;
+        /* left: 11vw; */
     }
 
     .headerImage {

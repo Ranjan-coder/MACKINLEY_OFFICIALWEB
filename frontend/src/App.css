@@ -3,22 +3,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-.navbarlayout{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 10vh;
-  background-color: #fff;
-  border-bottom: 1px solid grey;
-  position: static;
-  top: 0;
-  box-shadow: 1px 0px 5px rgb(68, 45, 198);
-}
-.officiallogo{
-  height: 50px;
-  margin-left: 50px;
-  cursor: pointer;
-}
-.navbarroutes{
-  margin-right: 50px;
-}

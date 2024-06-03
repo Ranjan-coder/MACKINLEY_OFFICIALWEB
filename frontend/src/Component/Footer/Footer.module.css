@@ -5,7 +5,8 @@
 }
 .headoffice_title,
 .quick_links,
-.newsletter_title {
+.newsletter_title,
+.quick_links_title {
   color: #fff;
   font-size: 20px;
   font-weight: 300;
@@ -70,6 +71,7 @@
   letter-spacing: 1px;
   font-family: "Merriweather", serif;
 }
+
 .quick_links_data {
   display: flex;
   align-items: center;
@@ -124,6 +126,10 @@
   margin-top: 30px;
 }
 
+.quick_link_anchor {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .footerparent {
     padding: 20px 20px 10px 20px !important;
@@ -147,7 +153,7 @@
   }
   .headoffice_title,
   .quick_links,
-  .newsletter_title {
+  .quick_links_title .newsletter_title {
     font-size: 17px;
   }
 }

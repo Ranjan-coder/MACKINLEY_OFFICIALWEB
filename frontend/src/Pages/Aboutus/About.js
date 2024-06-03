@@ -1,12 +1,12 @@
 import React from 'react'
 import aboutStyle from "./about.module.css"
-import aboutIllustration from "../../Assets/AboutPoster.gif";
+import aboutIllustration from "../../Assets/AboutPoster.jpg";
 const About = () => {
 
   return (
     <section className={aboutStyle.aboutMain__Container}>
 
-      <div className={`${aboutStyle.about_heroSection} 	 animate__animated animate__fadeInRightBig`}>
+      <div className={aboutStyle.about_heroSection}>
 
         <div className={aboutStyle.heroSection__InfoBox}>
           <h1 className={aboutStyle.heroSection__heading}>About Mackinlay</h1>

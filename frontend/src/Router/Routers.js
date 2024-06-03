@@ -8,6 +8,7 @@ import Contact from "../Pages/Contact/Contact";
 import ProductData from "../Pages/Discover/ProductData";
 import ProductPage from "../Pages/Discover/ProductPage";
 import ScrollEverPage from "./scroll";
+import Modals from "../Pages/Discover/Modals";
 
 const Routers = () => {
   return (
@@ -21,6 +22,7 @@ const Routers = () => {
           <Route path="/discover/:id" element={<ProductPage />} />
           <Route path="/career" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ask-demo" element={<Modals />} />
         </Routes>
       </ProductData>
     </>

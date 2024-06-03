@@ -6,13 +6,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Merriweather", serif;
+    user-select: none !important;;
 }
 
 .inputElement {
     width: 300px;
     margin-right: 20px;
 }
-
+.swiper-button-next{
+    border: 1px solid red;
+}
 .__discoverPage {
     margin: 3em;
 }

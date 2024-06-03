@@ -41,10 +41,10 @@ const Discover = () => {
           style={{ padding: "2em 0" }}
           slidesPerView={3}
           spaceBetween={30}
-          pagination={{ clickable: true, }}
+          pagination={{type: 'fraction'}}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper"
+          // className="mySwiper"
           breakpoints={{
             375: {
               slidesPerView: 1,

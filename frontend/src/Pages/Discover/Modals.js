@@ -54,7 +54,7 @@ export default function Modals() {
       <Form className={discover.__modalForm} onSubmit={handleSubmit} data-aos="zoom-in" data-aos-duration="800">
         <div className={discover.__modalContainer}>
           <Form.Group className="mb-3" controlId="formFullName">
-            <Form.Label>Full Name</Form.Label>
+            <Form.Label className={discover.__label}>Full Name</Form.Label>
             <Form.Control
               type="text"
               placeholder="John Doe"
@@ -66,7 +66,7 @@ export default function Modals() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formPhoneNumber">
-            <Form.Label>Mobile Number</Form.Label>
+            <Form.Label className={discover.__label}>Mobile Number</Form.Label>
             <PhoneInput
               country={'in'}
               type="tel"
@@ -85,7 +85,7 @@ export default function Modals() {
 
         <div className={discover.__modalContainer}>
           <Form.Group className="mb-3" controlId="formBusinessEmail">
-            <Form.Label>Business Email</Form.Label>
+            <Form.Label className={discover.__label}>Business Email</Form.Label>
             <Form.Control
               type="email"
               placeholder="name@example.com"
@@ -96,7 +96,7 @@ export default function Modals() {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formCompanyName">
-            <Form.Label>Company Name</Form.Label>
+            <Form.Label className={discover.__label}>Company Name</Form.Label>
             <Form.Control
               type="text"
               placeholder="ABC Enterprise"
@@ -107,8 +107,8 @@ export default function Modals() {
             />
           </Form.Group>
         </div>
-        <Form.Group className="mb-3" controlId="formMessage">
-          <Form.Label>Enter Message</Form.Label>
+        <Form.Group className={discover.__modalMsg} controlId="formMessage">
+          <Form.Label className={discover.__label}>Enter Message</Form.Label>
           <Form.Control
             as="textarea"
             rows={3}

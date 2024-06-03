@@ -6,16 +6,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Merriweather", serif;
-    user-select: none !important;;
+    user-select: none !important;
+    ;
 }
 
 .inputElement {
-    width: 300px;
+    /* width: 300px; */
     margin-right: 20px;
+    resize: none;
 }
-.swiper-button-next{
+
+.swiper-button-next {
     border: 1px solid red;
 }
+
 .__discoverPage {
     margin: 3em;
 }
@@ -253,7 +257,7 @@
     font-weight: 900;
 }
 
-label {
+.__label {
     color: whitesmoke;
 }
 
@@ -279,6 +283,9 @@ label {
     width: 200px;
     margin: auto;
 }
+.__modalMsg{
+    width: 100%;
+}
 
 
 @media only screen and (max-width:1056px) {
@@ -288,31 +295,36 @@ label {
     }
 }
 
-@media only screen and (max-width:780px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .__card {
         height: 330px;
         font-size: 12px;
     }
-    
+
     .__cardImg {
         height: 150px;
     }
-    
+
     .__cardTitle {
         font-size: 16px;
     }
-    
+
     .__cardBtn {
         left: -75px;
     }
-    
+
     .__demoBtn {
         font-size: 13px;
         bottom: 12%;
     }
-    
+
     .card {
         width: 300px;
+    }
+
+    .__modalTitle {
+        padding: 0 2em;
+        text-align: center;
     }
 }
 
@@ -325,5 +337,18 @@ label {
     .__image {
         height: 70vh;
         width: 100%;
+    }
+
+    .__modalForm {
+        width: 90%;
+    }
+
+    .__modalTitle {
+        padding: 0 1em;
+    }
+
+    .__modalContainer {
+        flex-direction: column;
+        align-items: center;
     }
 }

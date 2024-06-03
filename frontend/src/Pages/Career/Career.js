@@ -7,6 +7,12 @@ import "react-phone-input-2/lib/style.css";
 import toast from "react-hot-toast";
 // import { Toaster } from "react-hot-toast";
 import LogoLoader from "../../Component/Logo_Loader/LogoLoader";
+import culture from '../../Assets/culture.jpg';
+import commitment from '../../Assets/commitment.jpg'
+import globalTeam from '../../Assets/globalteam.jpg'
+import profDev from '../../Assets/proffDev.jpg'
+import socialResp from '../../Assets/soacialResp.jpg'
+
 const Career = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
@@ -150,16 +156,19 @@ const Career = () => {
       </div> */}
 
       <h2 className={CareerStyle.__headerText} data-aos="fade-right" data-aos-duration="1000">Our Company Culture</h2>
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <p className={CareerStyle.__headerDesc}>
-          <strong>Welcome to Mackinlay:</strong> Fostering Excellence, Sustainability, and Inclusion
-        </p>
-        <p className={CareerStyle.__headerDesc}>
-          At Mackinlay, fostering a positive and inclusive culture is not just a policy but the very foundation of our success. We believe that kindness, respect, and flexibility are essential values that shape our identity and drive our operations. By prioritizing these principles, we create an environment where every individual feels valued and empowered to contribute their best. Our commitment to inclusivity ensures diverse perspectives are not only welcomed but celebrated, enhancing creativity and innovation. This nurturing atmosphere promotes collaboration, personal growth, and a sense of belonging, ultimately fueling our collective achievements and strengthening our community.
-        </p>
-        <p className={CareerStyle.__headerDesc}>
-          <strong> Our vision: </strong> is to become the industry's benchmark for trust and innovation, embodying an unwavering commitment to excellence, sustainability, and societal well-being. We aim to set new standards in quality and reliability, earning the confidence of our stakeholders through transparent practices and cutting-edge solutions. Our dedication to sustainability drives us to pioneer eco-friendly initiatives, reducing our environmental footprint while promoting renewable resources and green technologies. By fostering a culture of integrity and social responsibility, we strive to make a meaningful and positive impact on communities, ensuring that our growth and success contribute to a better, more equitable world for future generations.
-        </p>
+      <div className={CareerStyle.__section} data-aos="fade-up" data-aos-duration="1000">
+        <div>
+          <p className={CareerStyle.__headerDesc}>
+            <strong>Welcome to Mackinlay:</strong> Fostering Excellence, Sustainability, and Inclusion
+          </p>
+          <p className={CareerStyle.__headerDesc}>
+            At Mackinlay, fostering a positive and inclusive culture is not just a policy but the very foundation of our success. We believe that kindness, respect, and flexibility are essential values that shape our identity and drive our operations. By prioritizing these principles, we create an environment where every individual feels valued and empowered to contribute their best. Our commitment to inclusivity ensures diverse perspectives are not only welcomed but celebrated, enhancing creativity and innovation. This nurturing atmosphere promotes collaboration, personal growth, and a sense of belonging, ultimately fueling our collective achievements and strengthening our community.
+          </p>
+          <p className={CareerStyle.__headerDesc}>
+            <strong> Our vision: </strong> is to become the industry's benchmark for trust and innovation, embodying an unwavering commitment to excellence, sustainability, and societal well-being. We aim to set new standards in quality and reliability, earning the confidence of our stakeholders through transparent practices and cutting-edge solutions. Our dedication to sustainability drives us to pioneer eco-friendly initiatives, reducing our environmental footprint while promoting renewable resources and green technologies. By fostering a culture of integrity and social responsibility, we strive to make a meaningful and positive impact on communities, ensuring that our growth and success contribute to a better, more equitable world for future generations.
+          </p>
+        </div>
+        <img className={CareerStyle.__cultureImg} src={culture} alt="" />
       </div>
 
       <p className={CareerStyle.__careerDesc} data-aos="fade-up" data-aos-duration="1000">
@@ -241,20 +250,30 @@ const Career = () => {
       </p>
 
       <div data-aos="fade-right">
-        <p className={CareerStyle.__careerDesc}>
-          <span>Corporate Social Responsibility: </span>
-          We are committed to giving back through community engagement, volunteering programs, charity events, and partnerships with local organizations. Our sustainability practices are enhanced by initiatives like our tree-planting program.
+        <p className={`${CareerStyle.__careerDesc} ${CareerStyle.__section}`}>
+          <img className={CareerStyle.__corporateImg} src={socialResp} alt="" />
+          <div>
+            <span>Corporate Social Responsibility: </span>
+            We are deeply committed to giving back to the community through a multifaceted approach that includes community engagement, volunteering programs, charity events, and strategic partnerships with local organizations. Our dedication to social responsibility is evident in our active participation and organization of various initiatives designed to support and uplift our community. This commitment extends to our sustainability practices, where we continually seek ways to positively impact the environment. One such initiative is our tree-planting program, which not only contributes to environmental conservation but also fosters a culture of sustainability within our organization. By integrating these efforts, we strive to create a positive and lasting impact, demonstrating our dedication to both social and environmental stewardship.
+          </div>
         </p>
 
-        <p className={CareerStyle.__careerDesc}>
-          <span>Professional Development: </span>
-          We support continuous learning and career growth through mentorship programs, workshops, and access to online courses. We provide clear career paths and conduct regular performance reviews.</p>
+        <p className={`${CareerStyle.__careerDesc} ${CareerStyle.__section}`}>
+          <div>
+            <span>Professional Development: </span>
+            At our company, we are dedicated to fostering continuous learning and career growth for all our employees. We offer robust mentorship programs that pair employees with experienced professionals to guide and support their career development. Additionally, we host a variety of workshops designed to enhance skills and knowledge in key areas relevant to our industry. To further support self-directed learning, we provide access to a wide range of online courses, enabling employees to learn at their own pace and on their own schedule. Our commitment to professional growth is also reflected in the clear career paths we have established, which outline the steps and milestones needed for advancement within the company. Regular performance reviews are conducted to provide constructive feedback, recognize achievements, and identify areas for improvement, ensuring that every employee has the opportunity to reach their full potential.
+          </div>
+          <img className={CareerStyle.__profDevImg} src={profDev} alt="" />
+        </p>
       </div>
 
       <div data-aos="fade-left">
-        <p className={CareerStyle.__careerDesc}>
-          <span>Join Our Global Team: </span>
-          If you're seeking a workplace where kindness, respect, flexibility, and cultural diversity are more than just words, Mackinlay welcomes you. Join us and be part of a culture that values your individuality and supports your growth on a global scale.
+        <p className={`${CareerStyle.__careerDesc} ${CareerStyle.__section}`}>
+          <img className={CareerStyle.__globalTeamImg} src={globalTeam} alt="" />
+          <div>
+            <span>Join Our Global Team: </span>
+            If you're seeking a workplace where kindness, respect, flexibility, and cultural diversity are more than just words, Mackinlay welcomes you with open arms. At Mackinlay, we strive to create an inclusive environment that truly embraces and celebrates the unique contributions of every team member. We understand that a supportive and adaptable work culture is essential for fostering innovation and personal growth. Our commitment to cultural diversity ensures that you will be part of a global community where your individuality is not only acknowledged but also valued. Join us at Mackinlay and be part of a forward-thinking organization that prioritizes your development and success on a global scale.
+          </div>
         </p>
 
         <p className={CareerStyle.__careerDesc}>
@@ -262,9 +281,12 @@ const Career = () => {
           Explore our current job openings and join our innovative and dynamic team, shaping the future of our industry. Visit our Career Page or contact us at <em>careers@mackinlay.in.</em>
         </p>
 
-        <p className={CareerStyle.__careerDesc}>
-          <span>Commitment to Sustainability: </span>
-          We are proud to announce our tree-planting initiative, reflecting our dedication to sustainability and environmental stewardship. Join us in creating a positive impact on the planet while striving for excellence in all aspects of our business.
+        <p className={`${CareerStyle.__careerDesc} ${CareerStyle.__section}`}>
+          <div>
+            <span>Commitment to Sustainability: </span>
+            We are proud to announce our tree-planting initiative, a testament to our unwavering commitment to sustainability and environmental stewardship. This initiative is more than just a project; it is a core part of our mission to foster a healthier planet and a brighter future. By planting trees, we aim to combat climate change, enhance biodiversity, and improve air quality, making a tangible difference in the communities we serve. We invite you to join us in this important endeavor, contributing to a greener world while we continue to pursue excellence in every facet of our business. Together, we can create a lasting positive impact on our environment and set a standard for corporate responsibility.
+          </div>
+          <img className={CareerStyle.__commitmentImg} src={commitment} alt="" />
         </p>
       </div>
 
@@ -272,7 +294,7 @@ const Career = () => {
         Isloading && <LogoLoader />
       }
       <div className={CareerStyle.career_container}>
-        <h5>Find your career opportunities :</h5>
+        <h5>Explore job opportunities :</h5>
         <div className="container">
           <div className="row" data-aos="zoom-out-up">
             {jobs.map((job) => (

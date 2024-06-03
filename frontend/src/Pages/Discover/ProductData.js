@@ -372,7 +372,6 @@ export default function ProductData(props) {
                     desc: "Experience the future of global attendance and payroll management. Join the growing number of businesses transforming their HR operations with WorldSync. Contact us today to learn more or request a demo."
                 }
             ],
-            caption: "Ready to learn more about how GlobalGuardian can protect your identity and enhance your banking experience? Contact us today to schedule a demo or speak with one of our experts.",
             img: worldsync,
             faq: [
                 {

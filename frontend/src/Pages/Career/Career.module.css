@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: justify;
 }
 
 /* Career Page --------------------------- */
@@ -22,11 +23,40 @@
 
 .__headerDesc {
     margin: .5em 0;
-    font-size: 17px;
+    font-size: 16px;
+}
+
+.__section {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    background: rgb(249, 249, 237);
+    padding: 1em 2em;
+}
+
+.__cultureImg,.__commitmentImg,.__corporateImg,.__profDevImg,.__globalTeamImg {
+    width: 100%;
+    height: 56vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.__corporateImg{
+    height: 220px;
+}
+.__commitmentImg{
+   height: 200px;
+}
+.__profDevImg{
+    height: 250px;
+}
+.__globalTeamImg{
+    height: 200px;
 }
 
 .__careerDesc {
     margin: 2em auto;
+    padding: 1em 2em;
+    background: rgb(249, 249, 237);
 }
 
 .__careerDesc h5,
@@ -72,6 +102,21 @@ ul li {
 }
 
 @media screen and (min-width:330px) and (max-width:950px) {
+    .__careerPage {
+        margin: 2em 1em;
+    }
+
+    .__section {
+        flex-direction: column;
+    }
+    .__cultureImg{
+        object-fit: cover;
+    }
+
+    .__headerDesc {
+        text-align: justify;
+    }
+
     .career_container {
         padding-top: 20px;
         position: relative;

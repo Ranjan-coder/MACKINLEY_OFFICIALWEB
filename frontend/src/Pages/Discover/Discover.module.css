@@ -16,6 +16,10 @@
 .__discoverPage {
     margin: 3em;
 }
+.__header{
+    background: rgb(230, 250, 255);
+    padding: 1em;
+}
 
 .__headerText {
     font-family: "Poetsen One", sans-serif;

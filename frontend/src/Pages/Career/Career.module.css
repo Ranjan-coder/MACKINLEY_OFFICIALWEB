@@ -22,11 +22,28 @@
 
 .__headerDesc {
     margin: .5em 0;
-    font-size: 17px;
+    font-size: 16px;
+}
+
+.__section {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    background: rgb(249, 249, 237);
+    padding: 1em 2em;
+}
+
+.__cultureImg {
+    width: 100%;
+    height: 56vh;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 .__careerDesc {
     margin: 2em auto;
+    padding: 1em 2em;
+    background: rgb(249, 249, 237);
 }
 
 .__careerDesc h5,
@@ -72,6 +89,21 @@ ul li {
 }
 
 @media screen and (min-width:330px) and (max-width:950px) {
+    .__careerPage {
+        margin: 2em 1em;
+    }
+
+    .__section {
+        flex-direction: column;
+    }
+    .__cultureImg{
+        object-fit: cover;
+    }
+
+    .__headerDesc {
+        text-align: justify;
+    }
+
     .career_container {
         padding-top: 20px;
         position: relative;

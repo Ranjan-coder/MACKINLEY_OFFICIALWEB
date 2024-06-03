@@ -189,7 +189,6 @@ const Discover = () => {
       {/* Service Contents ------------------------------------> */}
 
       <div className={discover.ServicePageContainer}>
-        {/* <ServiceCard head="Our Best Services" /> */}
         <h2 className={discover.__headerText} data-aos="fade-right">Our Best Services</h2>
         <p className={discover.ServiceDescription} data-aos="fade-up" data-aos-duration="600">
           At Mackinlay, our commitment to excellence in UI/UX design and IT services is at the core of what we do, ensuring your business not only survives but thrives in the competitive digital landscape. We offer a full spectrum of services tailored to your specific requirements, from intuitive and engaging user interface designs to robust and innovative IT solutions. Our team of experts works closely with you to understand your goals and challenges, delivering bespoke strategies that enhance user experiences, streamline operations, and boost overall efficiency. With Mackinlay by your side, you can be confident that your digital presence will be compelling, effective, and aligned with the latest industry standards, driving your business towards sustained success.

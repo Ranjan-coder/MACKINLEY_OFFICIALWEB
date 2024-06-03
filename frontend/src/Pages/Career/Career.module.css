@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
+/* Career Page --------------------------- */
 .__careerPage {
-    /* border: 1px solid blue; */
     margin: 3em;
+    overflow: hidden;
 }
 
 .__headerText {
@@ -18,35 +19,29 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
 .__headerDesc {
     margin: .5em 0;
     font-size: 17px;
 }
-.__careerDesc{
+
+.__careerDesc {
     margin: 2em auto;
 }
-.__careerDesc h5{
+
+.__careerDesc h5,
+.career_container h5 {
     font-weight: 600;
 }
-span{
+
+span {
     font-weight: 600;
 }
-ol li, ul li{
+
+ol li,
+ul li {
     line-height: 2;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .career_container {
     padding-top: 20px;

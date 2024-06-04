@@ -9,7 +9,7 @@ const Service = (props) => {
         <div className={discover.container} data-aos="fade-right">
             <div className={discover.row}>
                 {serviceitem.map((value, index) => (
-                    <div className={`${discover.card} ${discover.hidden}`} ref={el => serviceRef.current[index] = el}>
+                    <div className={discover.card} ref={el => serviceRef.current[index] = el}>
                         <img src={value.image} alt="Developmentimage" />
                         <div className={discover.cardBody}>
                             <h5 className={discover.cardtitle}>{value.head}</h5>

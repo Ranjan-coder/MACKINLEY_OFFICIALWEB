@@ -34,22 +34,30 @@
     padding: 1em 2em;
 }
 
-.__cultureImg,.__commitmentImg,.__corporateImg,.__profDevImg,.__globalTeamImg {
+.__cultureImg,
+.__commitmentImg,
+.__corporateImg,
+.__profDevImg,
+.__globalTeamImg {
     width: 100%;
     height: 56vh;
     object-fit: contain;
     border-radius: 10px;
 }
-.__corporateImg{
+
+.__corporateImg {
     height: 220px;
 }
-.__commitmentImg{
-   height: 200px;
+
+.__commitmentImg {
+    height: 200px;
 }
-.__profDevImg{
+
+.__profDevImg {
     height: 250px;
 }
-.__globalTeamImg{
+
+.__globalTeamImg {
     height: 200px;
 }
 
@@ -108,8 +116,14 @@ ul li {
 
     .__section {
         flex-direction: column;
+        padding: 1em;
     }
-    .__cultureImg{
+
+    .__cultureImg,
+    .__commitmentImg,
+    .__corporateImg,
+    .__profDevImg,
+    .__globalTeamImg {
         object-fit: cover;
     }
 
@@ -127,5 +141,8 @@ ul li {
         width: 19vw;
         height: 4vh;
         margin-right: 10px;
+    }
+    .__careerDesc{
+        padding: 1em;
     }
 }

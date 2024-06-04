@@ -75,6 +75,7 @@ export default function Modals() {
               onChange={handlePhoneChange}
               value={phoneNumber}
               required
+              inputStyle={{width:"100%"}}
               inputProps={{
                 name: 'phoneNumber',
                 required: true,

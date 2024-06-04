@@ -46,6 +46,10 @@ const Discover = () => {
           modules={[Pagination, Navigation]}
           // className="mySwiper"
           breakpoints={{
+            360: {
+              slidesPerView: 1,
+              spaceBetween: 2,
+            },
             375: {
               slidesPerView: 1,
               spaceBetween: 2,

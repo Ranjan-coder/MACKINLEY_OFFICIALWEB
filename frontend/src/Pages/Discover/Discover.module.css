@@ -127,8 +127,9 @@
     font-size: 14px;
     font-weight: 300;
     position: absolute;
-    bottom: 45px;
-    left: 30%;
+    left: 50%;
+    bottom: 12%;
+    transform: translate(-50%);
 }
 
 
@@ -357,8 +358,6 @@
     }
 
     .__modalContainer {
-        /* flex-direction: column; */
-        /* flex-wrap: wrap; */
         justify-content: space-between;
         align-items: center;
         gap: 1em;
@@ -366,7 +365,16 @@
 }
 
 @media screen and (max-width:600px) {
+    .__card{
+        width: 90vw;
+    }
+    .__image{
+        height: 44vh;
+    }
     .__modalContainer {
         flex-direction: column;
+    }
+    .__demoBtn{
+        font-size: 14px;
     }
 }

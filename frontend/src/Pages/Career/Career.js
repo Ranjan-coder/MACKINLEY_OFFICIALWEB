@@ -38,7 +38,8 @@ const Career = () => {
   useEffect(() => {
     setLoading(true)
     axios
-      .get("http://localhost:5995/api/get-jobs")
+      // .get("http://localhost:5995/api/get-jobs")
+      .get("https://mackinley-officialweb.onrender.com/api/get-jobs")
       .then((response) => {
         setLoading(false)
         setJobs(response.data);

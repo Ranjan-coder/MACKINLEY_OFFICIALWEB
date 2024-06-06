@@ -6,11 +6,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Merriweather", serif;
+    user-select: none !important;
 }
 
 .inputElement {
-    width: 300px;
-    margin-right: 20px;
+    resize: none;
+}
+
+.swiper-button-next {
+    border: 1px solid red;
 }
 
 .__discoverPage {
@@ -52,7 +56,7 @@
 
 .__card {
     border: 1px solid rgb(185, 185, 185);
-    width: 400px;
+    /* width: 400px; */
     height: 380px;
     cursor: pointer;
     position: relative;
@@ -123,14 +127,14 @@
     font-size: 14px;
     font-weight: 300;
     position: absolute;
-    bottom: 45px;
-    left: 30%;
+    left: 50%;
+    bottom: 12%;
+    transform: translate(-50%);
 }
 
 
 /* Details Page ------------------------ */
 .__mainContainer {
-    /* margin: 3em; */
     background: rgb(230, 250, 255);
     padding: 2em;
 }
@@ -162,7 +166,6 @@
 
 /* Service Page ------------------------ */
 .ServicePageContainer {
-    /* border: 1px solid; */
     padding-top: 10;
 }
 
@@ -172,12 +175,10 @@
 }
 
 .container {
-    /* border: 1px solid blue; */
     padding: 1em 0;
 }
 
 .row {
-    /* border: 1px solid red; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -250,7 +251,7 @@
     font-weight: 900;
 }
 
-label {
+.__label {
     color: whitesmoke;
 }
 
@@ -277,50 +278,109 @@ label {
     margin: auto;
 }
 
-
-@media only screen and (max-width:1056px) {
-    .__card {
-        width: 300px;
-        height: 380px;
-    }
+.__modalMsg {
+    width: 100%;
 }
 
-@media only screen and (max-width:780px) {
+
+/* @media only screen and (max-device-width: 1440px) {
+    .__card {
+        width: 18vw;
+        height: 380px;
+        height: 48vh;
+    }
+} */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .__card {
         height: 330px;
         font-size: 12px;
     }
-    
+
     .__cardImg {
         height: 150px;
     }
-    
+
     .__cardTitle {
         font-size: 16px;
     }
-    
+
     .__cardBtn {
         left: -75px;
     }
-    
+
     .__demoBtn {
         font-size: 13px;
         bottom: 12%;
     }
-    
+
     .card {
-        width: 300px;
+        width: 230px;
+    }
+
+    .__modalTitle {
+        padding: 0 2em;
+        text-align: center;
     }
 }
 
 
-@media only screen and (max-width:500px) {
+@media screen and (min-width:330px) and (max-width:950px) {
+    .__discoverPage {
+        margin: 1em;
+    }
+
+    .row .card {
+        width: 300px;
+        margin: 3px;
+    }
+
     .__demoBtn {
         font-size: 12px;
     }
 
+    .__mainContainer {
+        padding: 1em 2em;
+    }
+
     .__image {
-        height: 70vh;
-        width: 100%;
+        height: 50vh;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+    .__modalForm {
+        width: 90%;
+        padding: 3em;
+    }
+
+    .__modalTitle {
+        padding: 0 1em;
+    }
+
+    .__modalContainer {
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .__card {
+        width: 90vw;
+    }
+
+    .__image {
+        height: 40vh;
+    }
+    .__mainContainer{
+        padding: 0em;
+    }
+    .__modalContainer {
+        flex-direction: column;
+    }
+
+    .__demoBtn {
+        font-size: 14px;
     }
 }

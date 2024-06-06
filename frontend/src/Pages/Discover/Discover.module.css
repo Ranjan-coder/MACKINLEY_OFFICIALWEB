@@ -56,7 +56,7 @@
 
 .__card {
     border: 1px solid rgb(185, 185, 185);
-    width: 400px;
+    /* width: 400px; */
     height: 380px;
     cursor: pointer;
     position: relative;
@@ -283,12 +283,13 @@
 }
 
 
-@media only screen and (min-width:1056px) {
+/* @media only screen and (max-device-width: 1440px) {
     .__card {
-        width: 30vw;
+        width: 18vw;
         height: 380px;
+        height: 48vh;
     }
-}
+} */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .__card {
@@ -365,16 +366,21 @@
 }
 
 @media screen and (max-width:600px) {
-    .__card{
+    .__card {
         width: 90vw;
     }
-    .__image{
-        height: 44vh;
+
+    .__image {
+        height: 40vh;
+    }
+    .__mainContainer{
+        padding: 0em;
     }
     .__modalContainer {
         flex-direction: column;
     }
-    .__demoBtn{
+
+    .__demoBtn {
         font-size: 14px;
     }
 }

@@ -30,7 +30,7 @@
     display: flex;
     align-items: center;
     gap: 2em;
-    background: rgb(249, 249, 237);
+    background: rgb(230, 250, 255);
     padding: 1em 2em;
 }
 
@@ -64,7 +64,7 @@
 .__careerDesc {
     margin: 2em auto;
     padding: 1em 2em;
-    background: rgb(249, 249, 237);
+    background: rgb(230, 250, 255);
 }
 
 .__careerDesc h5,

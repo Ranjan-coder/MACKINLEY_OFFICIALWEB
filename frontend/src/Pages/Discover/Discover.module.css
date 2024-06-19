@@ -19,6 +19,7 @@
 
 .__discoverPage {
     margin: 3em;
+    overflow: hidden;
 }
 
 .__header {
@@ -42,10 +43,82 @@
 }
 
 .__headerDesc,
-.__cardDescription {
+.__cardDescription,
+.__items {
     color: rgb(100, 100, 100);
 }
 
+/* OUR INNOVATIONS -------- */
+.__innovations {
+    margin: 3em 0;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-evenly;
+}
+
+.__items {
+    font-size: 18px;
+    width: 18vw;
+    list-style: none;
+    color: #323237;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+.__upcoming {
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+
+.__upcoming:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: white;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: rgb(47, 47, 47);
+    content: "Upcoming..";
+    transform: rotateX(90deg);
+}
+
+.__upcoming:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #323237;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: rgb(230, 250, 255);
+    transform: translateY(0) rotateX(0);
+}
+
+.__upcoming:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+.__upcoming:hover:before {
+    opacity: 0;
+    transform: rotateX(90deg);
+}
+
+
+/*  don't know where it's applying ------ */
 .__container {
     margin: 2em 0;
     display: flex;
@@ -53,6 +126,7 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+/* ------ */
 
 .__card {
     border: 1px solid rgb(185, 185, 185);
@@ -373,9 +447,11 @@
     .__image {
         height: 40vh;
     }
-    .__mainContainer{
+
+    .__mainContainer {
         padding: 0em;
     }
+
     .__modalContainer {
         flex-direction: column;
     }
